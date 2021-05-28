@@ -23,7 +23,35 @@ const routes: Array<RouteConfig> = [
     path: '/vuex-class',
     name: 'Vuex-Class',
     component: () =>
-      import(/* webpackChunkName: "person" */ '../components/Person.vue'),
+      import(/* webpackChunkName: "vuex-class" */ '../components/Person.vue'),
+  },
+  {
+    path: '/hello-world',
+    name: 'Hello-World',
+    component: () =>
+      import(
+        /* webpackChunkName: "hello-world" */ '@/views/HelloWorld/index.vue'
+      ),
+  },
+  {
+    path: '/message-list',
+    name: 'Message-List',
+    component: () =>
+      import(
+        /* webpackChunkName: "message-list" */ '@/views/MessageList/index.vue'
+      ),
+  },
+  {
+    path: '/user-name',
+    name: 'User-Name',
+    component: () =>
+      import(/* webpackChunkName: "message" */ '@/views/UserName/index.vue'),
+  },
+  {
+    path: '/quantity',
+    name: 'Quantity',
+    component: () =>
+      import(/* webpackChunkName: "quantity" */ '../components/Quantity.vue'),
   },
 ]
 

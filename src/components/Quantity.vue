@@ -1,8 +1,14 @@
 <template>
   <div>
-    Count:<input type="text" @keydown.prevent="onKeyEvent" v-model="count" />
-    <v-btn @click="add">+</v-btn>
-    <div>{{ count }}</div>
+    <v-text-field
+      label="PRESS '⬆' '⬇' TO CHANGE THE COUNT, AND PRESS 'ESC' WOULD RESET"
+      type="text"
+      placeholder="ss"
+      @keydown.prevent="onKeyEvent"
+      v-model="count"
+    />
+
+    <h1 style="text-align: center; width: 100%; color: tomato">{{ count }}</h1>
   </div>
 </template>
 <script lang="ts">
@@ -12,11 +18,23 @@ export default class Count extends Vue {
   count = 0
   onKeyEvent(e: KeyboardEvent): void {
     console.info(e.keyCode)
-    this.count += 1
+    if (e.keyCode === 38) {
+      this.count++
+    }
+
+    if (e.keyCode === 40) {
+      this.count--
+    }
+
+    if (e.key === 'a') {
+      this.count = 13
+    }
+
+    if (e.keyCode === 27) {
+      this.count = 0
+    }
   }
-  add(): void {
-    this.count++
-  }
+
   @Watch('count')
   changeCount(newValue: number): void {
     console.info('newValue', newValue)
