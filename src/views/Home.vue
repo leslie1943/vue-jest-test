@@ -1,17 +1,18 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <HelloWorld msg="Jest" />
+    <v-divider />
     <MessageList :messages="messages" />
+    <v-divider />
     <Message />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
-import MessageList from '@/components/MessageList.vue' // @ is an alias to /src
-import Message from '@/components/Message.vue' // @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'
+import MessageList from '@/components/MessageList.vue'
+import Message from '@/components/Username.vue'
 
 @Component({
   components: {

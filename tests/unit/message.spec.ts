@@ -13,7 +13,7 @@ describe('MessageList.vue', () => {
   it('equals messages to ["Dora"]', () => {
     expect((wrapper.vm as any).messages).toEqual(['Mark', 'Dora'])
   })
-  it('has the expected html structure', () => {
-    expect(wrapper.element).toMatchSnapshot()
-  })
+  // it('has the expected html structure', () => {
+  //   expect(wrapper.element).toMatchSnapshot()
+  // })
 })
