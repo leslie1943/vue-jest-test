@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Quantity />
+    <Quantity :age="19" :msg="'hello'" />
   </div>
 </template>
 

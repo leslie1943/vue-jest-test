@@ -51,7 +51,13 @@ const routes: Array<RouteConfig> = [
     path: '/quantity',
     name: 'Quantity',
     component: () =>
-      import(/* webpackChunkName: "quantity" */ '../components/Quantity.vue'),
+      import(/* webpackChunkName: "quantity" */ '@/views/Quantity/index.vue'),
+  },
+  {
+    path: '/loading',
+    name: 'Loading',
+    component: () =>
+      import(/* webpackChunkName: "loading" */ '@/views/Loading/index.vue'),
   },
 ]
 

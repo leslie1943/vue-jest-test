@@ -27,11 +27,12 @@ type ItemProp = {
 export default class TopMenu extends Vue {
   items: Array<ItemProp> = [
     { name: 'Home', path: '/' },
-    { name: 'Vuex-Class', path: '/vuex-class' },
     { name: 'Hello-World', path: '/hello-world' },
     { name: 'Message-List', path: '/message-list' },
     { name: 'User-Name', path: '/user-name' },
     { name: 'Quantity', path: '/quantity' },
+    { name: 'Vuex-Class', path: '/vuex-class' },
+    { name: 'Loading', path: '/loading' },
     { name: 'About', path: '/about' },
   ]
   clickMenu(item: ItemProp): void {

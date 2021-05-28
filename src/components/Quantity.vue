@@ -8,22 +8,40 @@
       v-model="count"
     />
 
-    <h1 style="text-align: center; width: 100%; color: tomato">{{ count }}</h1>
+    <v-divider />
+    <v-btn id="plus" @click="increment">Increment</v-btn>
+
+    <h1 id="h2" style="text-align: center; width: 100%; color: tomato">
+      {{ count }}
+    </h1>
   </div>
 </template>
 <script lang="ts">
-import { Vue, Component, Watch } from 'vue-property-decorator'
+import { Vue, Component, Watch, Prop } from 'vue-property-decorator'
 @Component
 export default class Count extends Vue {
+  @Prop() private msg!: string
+  @Prop() private age!: number
   count = 0
-  onKeyEvent(e: KeyboardEvent): void {
-    console.info(e.keyCode)
-    if (e.keyCode === 38) {
-      this.count++
-    }
 
+  increment(): void {
+    this.count++
+  }
+
+  decrement(): void {
+    this.count--
+  }
+
+  clear(): void {
+    this.count = 0
+  }
+
+  onKeyEvent(e: KeyboardEvent): void {
+    if (e.keyCode === 38) {
+      this.increment()
+    }
     if (e.keyCode === 40) {
-      this.count--
+      this.decrement()
     }
 
     if (e.key === 'a') {
@@ -31,7 +49,7 @@ export default class Count extends Vue {
     }
 
     if (e.keyCode === 27) {
-      this.count = 0
+      this.clear()
     }
   }
 
