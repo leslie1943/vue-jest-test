@@ -1,9 +1,16 @@
 <template>
   <div class="home">
-    <button id="success" @click="handleSuccess">成功</button>
-    <button id="warning" @click="handleWarning">警告</button>
-    <button id="error" @click="handleError">错误</button>
-    <button id="info" @click="handleInfo">消息</button>
+    <v-card class="mx-auto" max-width="1344">
+      <v-card-text>
+        <div>demo</div>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn id="success" @click="handleSuccess">成功</v-btn>
+        <v-btn id="warning" @click="handleWarning">警告</v-btn>
+        <v-btn id="error" @click="handleError">错误</v-btn>
+        <v-btn id="info" @click="handleInfo">消息</v-btn>
+      </v-card-actions>
+    </v-card>
   </div>
 </template>
 
