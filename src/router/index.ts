@@ -59,6 +59,20 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "loading" */ '@/views/Loading/index.vue'),
   },
+  {
+    path: '/set-time-out',
+    name: 'SetTimeout',
+    component: () =>
+      import(
+        /* webpackChunkName: "setTimeout" */ '@/views/SetTimeout/index.vue'
+      ),
+  },
+  {
+    path: '/message',
+    name: 'Message',
+    component: () =>
+      import(/* webpackChunkName: "setTimeout" */ '@/views/Message/index.vue'),
+  },
 ]
 
 const router = new VueRouter({

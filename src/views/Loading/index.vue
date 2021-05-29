@@ -5,7 +5,7 @@
 <script>
 import { Vue, Component } from "vue-property-decorator";
 
-import Loading from '@/components/Loading'
+import Loading from '@/components/Loading.vue'
 
 @Component({ name: 'LoadingIndex', components: { Loading } })
 export default class LoadingIndex extends Vue {
