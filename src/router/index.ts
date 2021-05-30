@@ -45,7 +45,7 @@ const routes: Array<RouteConfig> = [
     path: '/user-name',
     name: 'User-Name',
     component: () =>
-      import(/* webpackChunkName: "message" */ '@/views/UserName/index.vue'),
+      import(/* webpackChunkName: "user-name" */ '@/views/UserName/index.vue'),
   },
   {
     path: '/quantity',
@@ -58,6 +58,34 @@ const routes: Array<RouteConfig> = [
     name: 'Loading',
     component: () =>
       import(/* webpackChunkName: "loading" */ '@/views/Loading/index.vue'),
+  },
+  {
+    path: '/set-time-out',
+    name: 'SetTimeout',
+    component: () =>
+      import(
+        /* webpackChunkName: "setTimeout" */ '@/views/SetTimeout/index.vue'
+      ),
+  },
+  {
+    path: '/message',
+    name: 'Message',
+    component: () =>
+      import(/* webpackChunkName: "message" */ '@/views/Message/index.vue'),
+  },
+  {
+    path: '/depends',
+    name: 'Depends',
+    component: () =>
+      import(/* webpackChunkName: "depends" */ '@/views/Depends/index.vue'),
+  },
+  {
+    path: '/state-change',
+    name: 'StateChange',
+    component: () =>
+      import(
+        /* webpackChunkName: "state change" */ '@/views/StateChange/index.vue'
+      ),
   },
 ]
 

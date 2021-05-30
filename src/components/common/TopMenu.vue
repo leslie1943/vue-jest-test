@@ -33,7 +33,11 @@ export default class TopMenu extends Vue {
     { name: 'Quantity', path: '/quantity' },
     { name: 'Vuex-Class', path: '/vuex-class' },
     { name: 'Loading', path: '/loading' },
+    { name: 'SetTimeout', path: '/set-time-out' },
+    { name: 'Message', path: '/message' },
+    { name: 'Depends', path: '/depends' },
     { name: 'About', path: '/about' },
+    { name: 'StateChange', path: '/state-change' },
   ]
   clickMenu(item: ItemProp): void {
     this.$router.push(item.path)
