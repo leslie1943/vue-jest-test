@@ -87,6 +87,12 @@ const routes: Array<RouteConfig> = [
         /* webpackChunkName: "state change" */ '@/views/StateChange/index.vue'
       ),
   },
+  {
+    path: '/emit-on',
+    name: 'EmitOn',
+    component: () =>
+      import(/* webpackChunkName: "emit-on" */ '@/views/EventEmitOn/index.vue'),
+  },
 ]
 
 const router = new VueRouter({

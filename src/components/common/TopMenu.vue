@@ -38,6 +38,7 @@ export default class TopMenu extends Vue {
     { name: 'Depends', path: '/depends' },
     { name: 'About', path: '/about' },
     { name: 'StateChange', path: '/state-change' },
+    { name: 'EmitOn', path: '/emit-on' },
   ]
   clickMenu(item: ItemProp): void {
     this.$router.push(item.path)

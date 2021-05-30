@@ -6,6 +6,7 @@
       placeholder="ss"
       @keydown.prevent="onKeyEvent"
       v-model="count"
+      id="res"
     />
 
     <v-divider />
@@ -24,7 +25,9 @@ export default class Count extends Vue {
   @Prop() private age!: number
   count = 0
 
-  increment(): void {
+  // eslint-disable-next-line
+  increment($event?: any): void {
+    // console.info('$event', $event.count)
     this.count++
   }
 
@@ -37,6 +40,7 @@ export default class Count extends Vue {
   }
 
   onKeyEvent(e: KeyboardEvent): void {
+    console.info('e', e)
     if (e.keyCode === 38) {
       this.increment()
     }
