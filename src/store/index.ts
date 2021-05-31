@@ -5,8 +5,9 @@ import PersonModule from './modules/person'
 Vue.use(Vuex)
 
 export type AppState = {
-  person: PersonModule
+  person?: PersonModule
   errors: string[]
+  token: string
 }
 
 export const createStore = (options: {
@@ -18,10 +19,15 @@ export const createStore = (options: {
     modules: {
       person: PersonModule,
     },
-    mutations: {},
+    mutations: {
+      setToken(state: AppState, token: string) {
+        state.token = token
+      },
+    },
     actions: {},
     state: {
       errors: [],
+      token: '',
     },
   })
 

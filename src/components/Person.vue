@@ -63,11 +63,11 @@ export default class Person extends Vue {
   @Action('getPerson', { namespace }) getMan!: () => Promise<void>
 
   // state是全局的 state, 可以调用到各个模块下的 state
-  @State((state: AppState) => state.person.loading) pageDataLoading:
+  @State((state: AppState) => state.person?.loading) pageDataLoading:
     | boolean
     | undefined
 
-  @State((state: AppState) => state.person.man) pageDataMan: Man | undefined
+  @State((state: AppState) => state.person?.man) pageDataMan: Man | undefined
   @State((state: AppState) => state.errors) errors: any
 
   handleGetMan = async (): Promise<void> => {
