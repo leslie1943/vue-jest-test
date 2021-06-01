@@ -6,7 +6,22 @@
       </template>
       <v-list>
         <v-list-item
-          v-for="item in items"
+          v-for="item in items_1"
+          :key="item.path"
+          @click="clickMenu(item)"
+        >
+          <v-list-item-title>{{ item.name }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+
+    <v-menu offset-x>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn color="primary" dark v-bind="attrs" v-on="on"> PICK MENU </v-btn>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="item in items_2"
           :key="item.path"
           @click="clickMenu(item)"
         >
@@ -25,7 +40,7 @@ type ItemProp = {
 }
 @Component
 export default class TopMenu extends Vue {
-  items: Array<ItemProp> = [
+  items_1: Array<ItemProp> = [
     { name: 'Home', path: '/' },
     { name: 'Hello-World', path: '/hello-world' },
     { name: 'Message-List', path: '/message-list' },
@@ -39,7 +54,11 @@ export default class TopMenu extends Vue {
     { name: 'About', path: '/about' },
     { name: 'StateChange', path: '/state-change' },
     { name: 'EmitOn', path: '/emit-on' },
+    { name: 'RouterTest', path: '/router-test' },
+    { name: 'Vuetify Menu', path: '/v-menu' },
   ]
+
+  items_2: Array<ItemProp> = [{ name: 'Vuetify Alert', path: '/v-alert' }]
   clickMenu(item: ItemProp): void {
     this.$router.push(item.path)
   }

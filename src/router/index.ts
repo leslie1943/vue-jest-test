@@ -93,6 +93,26 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "emit-on" */ '@/views/EventEmitOn/index.vue'),
   },
+  {
+    path: '/router-test',
+    name: 'RouterTest',
+    component: () =>
+      import(
+        /* webpackChunkName: "router-test" */ '@/views/RouterTest/index.vue'
+      ),
+  },
+  {
+    path: '/v-menu',
+    name: 'Vuetify Menu',
+    component: () =>
+      import(/* webpackChunkName: "v-menu" */ '@/views/V-Menu/index.vue'),
+  },
+  {
+    path: '/v-alert',
+    name: 'Vuetify Alert',
+    component: () =>
+      import(/* webpackChunkName: "v-alert" */ '@/views/V-Alert/index.vue'),
+  },
 ]
 
 const router = new VueRouter({
