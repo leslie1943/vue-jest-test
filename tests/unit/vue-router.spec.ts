@@ -25,6 +25,7 @@ describe('Route.vue', () => {
         $route,
         $router,
       },
+      stubs: ['router-link'],
     })
     expect($router.replace).toHaveBeenCalled()
   })
@@ -38,6 +39,7 @@ describe('Route.vue', () => {
         $route,
         $router,
       },
+      stubs: ['router-link'],
     })
     expect(wrapper.vm.$route.query.id).toBe(1943)
   })

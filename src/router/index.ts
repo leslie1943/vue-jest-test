@@ -125,6 +125,21 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "Summary" */ '@/views/CardSummary/index.vue'),
   },
+  {
+    path: '/card-enums',
+    name: 'CardEnums',
+    component: () =>
+      import(/* webpackChunkName: "CardEnums" */ '@/views/CardTypes/index.vue'),
+  },
+  {
+    path: '/upload',
+    name: 'UploadAvatar',
+    component: () =>
+      import(
+        /* webpackChunkName: "UploadAvatar" */ '@/views/UploadAvatar/index.vue'
+      ),
+  },
+  // card-enums
 ]
 
 const router = new VueRouter({
