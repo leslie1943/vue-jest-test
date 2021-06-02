@@ -113,6 +113,18 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "v-alert" */ '@/views/V-Alert/index.vue'),
   },
+  {
+    path: '/v-avatar',
+    name: 'Vuetify Avatar',
+    component: () =>
+      import(/* webpackChunkName: "v-alert" */ '@/views/V-Avatar/index.vue'),
+  },
+  {
+    path: '/summary',
+    name: 'Summary',
+    component: () =>
+      import(/* webpackChunkName: "Summary" */ '@/views/CardSummary/index.vue'),
+  },
 ]
 
 const router = new VueRouter({
