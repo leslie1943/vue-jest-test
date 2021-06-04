@@ -62,6 +62,10 @@ export default class TopMenu extends Vue {
     { name: 'Vuetify Alert', path: '/v-alert' },
     { name: 'Vuetify Avatar', path: '/v-avatar' },
     { name: 'Car Summary', path: '/summary' },
+    { name: 'Car types', path: '/card-enums' },
+    { name: 'Upload Avart', path: '/upload' },
+    { name: 'Badge', path: '/v-badge' },
+    { name: 'Banner', path: '/v-banner' },
   ]
   clickMenu(item: ItemProp): void {
     this.$router.push(item.path)

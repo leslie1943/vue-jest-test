@@ -29,6 +29,7 @@ describe('Route.vue', () => {
   // case: no query.id
   it('no passed $route.query.id', async () => {
     const wrapper = shallowMount(RouterTest, {
+      stubs: ['router-link'],
       // 🚀🚀🚀 add some property or methods to Vue dynamic
       mocks: {
         $router,
@@ -52,6 +53,7 @@ describe('Route.vue', () => {
         $route,
         $router,
       },
+      stubs: ['router-link'],
     })
     wrapper.setData({ show: true })
     await wrapper.vm.$nextTick()

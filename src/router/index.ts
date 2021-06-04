@@ -125,6 +125,33 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "Summary" */ '@/views/CardSummary/index.vue'),
   },
+  {
+    path: '/card-enums',
+    name: 'CardEnums',
+    component: () =>
+      import(/* webpackChunkName: "CardEnums" */ '@/views/CardTypes/index.vue'),
+  },
+  {
+    path: '/upload',
+    name: 'UploadAvatar',
+    component: () =>
+      import(
+        /* webpackChunkName: "UploadAvatar" */ '@/views/UploadAvatar/index.vue'
+      ),
+  },
+  {
+    path: '/v-badge',
+    name: 'Badge',
+    component: () =>
+      import(/* webpackChunkName: "badge" */ '@/views/Badge/index.vue'),
+  },
+  {
+    path: '/v-banner',
+    name: 'Banner',
+    component: () =>
+      import(/* webpackChunkName: "banner" */ '@/views/Banner/index.vue'),
+  },
+  // card-enums
 ]
 
 const router = new VueRouter({

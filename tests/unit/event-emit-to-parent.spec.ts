@@ -34,3 +34,16 @@ describe('EventEmitOnParent.vue', () => {
     expect(wrapper.find('.after').text()).toContain('After')
   })
 })
+
+describe('EventEmitOnChild.vue', () => {
+  const mockEmit = jest.fn() //  ----- 💛💛 STEP - 0  💛💛: jest.fn 定义一个方法
+  it(`Test EventEmitOnChild`, () => {
+    const wrapper = mount(EventEmitOnChild, {
+      mocks: {
+        $emit: mockEmit, // ----- 💛💛 STEP - 1 💛💛 将模拟的 mockEmit 赋值给当前组件的 this.$emit属性  实际组件中: this.$emit('custom')
+      },
+    })
+    ;(wrapper.vm as any).emitEvent() // 💛💛 STEP - 2 💛💛 触发组件定义的事件:  ==> 事件内部的 this.$emit 会被执行
+    expect(mockEmit).toBeCalled() // 💛💛 STEP - 3 💛💛 this.$emit 在测试文件中指向 mockEmit  ==> 那么 mockEmit 就会被 call
+  })
+})
