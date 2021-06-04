@@ -139,6 +139,18 @@ const routes: Array<RouteConfig> = [
         /* webpackChunkName: "UploadAvatar" */ '@/views/UploadAvatar/index.vue'
       ),
   },
+  {
+    path: '/v-badge',
+    name: 'Badge',
+    component: () =>
+      import(/* webpackChunkName: "badge" */ '@/views/Badge/index.vue'),
+  },
+  {
+    path: '/v-banner',
+    name: 'Banner',
+    component: () =>
+      import(/* webpackChunkName: "banner" */ '@/views/Banner/index.vue'),
+  },
   // card-enums
 ]
 
