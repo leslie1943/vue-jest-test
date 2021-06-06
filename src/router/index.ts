@@ -151,7 +151,40 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "banner" */ '@/views/Banner/index.vue'),
   },
-  // card-enums
+  {
+    path: '/v-bottom-navigation',
+    name: 'BottomNavigation',
+    component: () =>
+      import(
+        /* webpackChunkName: "banner" */ '@/views/BottomNavigation/index.vue'
+      ),
+  },
+
+  {
+    path: '/v-vuex-pure',
+    name: 'VuexPureModule',
+    component: () =>
+      import(/* webpackChunkName: "banner" */ '@/views/VuexStore/VuexPure.vue'),
+  },
+
+  {
+    path: '/v-vuex-namespace',
+    name: 'VuexModuleNamespaced',
+    component: () =>
+      import(
+        /* webpackChunkName: "banner" */ '@/views/VuexStore/VuexNamespace.vue'
+      ),
+  },
+
+  {
+    path: '/v-vuex-dyancmic',
+    name: 'VuexModuleDynamic',
+    component: () =>
+      import(
+        /* webpackChunkName: "banner" */ '@/views/VuexStore/VuexDynamic.vue'
+      ),
+  },
+  // /v-bottom-navigation
 ]
 
 const router = new VueRouter({

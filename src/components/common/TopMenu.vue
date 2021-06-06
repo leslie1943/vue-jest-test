@@ -29,6 +29,23 @@
         </v-list-item>
       </v-list>
     </v-menu>
+
+    <v-menu offset-x>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn color="primary" dark v-bind="attrs" v-on="on">
+          Vuex 3 ways</v-btn
+        >
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="item in items_store"
+          :key="item.path"
+          @click="clickMenu(item)"
+        >
+          <v-list-item-title>{{ item.name }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
   </div>
 </template>
 
@@ -66,6 +83,13 @@ export default class TopMenu extends Vue {
     { name: 'Upload Avart', path: '/upload' },
     { name: 'Badge', path: '/v-badge' },
     { name: 'Banner', path: '/v-banner' },
+    { name: 'Bottom Navigation', path: '/v-bottom-navigation' },
+  ]
+
+  items_store: Array<ItemProp> = [
+    { name: 'Vuex: Pure Module', path: '/v-vuex-pure' },
+    { name: 'Vuex: Module with namespaced', path: '/v-vuex-namespace' },
+    { name: 'Vuex: Module by dynamic', path: '/v-vuex-dyancmic' },
   ]
   clickMenu(item: ItemProp): void {
     this.$router.push(item.path)
