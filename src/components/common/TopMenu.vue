@@ -84,6 +84,7 @@ export default class TopMenu extends Vue {
     { name: 'Badge', path: '/v-badge' },
     { name: 'Banner', path: '/v-banner' },
     { name: 'Bottom Navigation', path: '/v-bottom-navigation' },
+    { name: 'Dialog', path: '/v-dialog' },
   ]
 
   items_store: Array<ItemProp> = [

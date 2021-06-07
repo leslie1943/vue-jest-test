@@ -156,7 +156,7 @@ const routes: Array<RouteConfig> = [
     name: 'BottomNavigation',
     component: () =>
       import(
-        /* webpackChunkName: "banner" */ '@/views/BottomNavigation/index.vue'
+        /* webpackChunkName: "BottomNavigation" */ '@/views/BottomNavigation/index.vue'
       ),
   },
 
@@ -164,7 +164,9 @@ const routes: Array<RouteConfig> = [
     path: '/v-vuex-pure',
     name: 'VuexPureModule',
     component: () =>
-      import(/* webpackChunkName: "banner" */ '@/views/VuexStore/VuexPure.vue'),
+      import(
+        /* webpackChunkName: "VuexPureModule" */ '@/views/VuexStore/VuexPure.vue'
+      ),
   },
 
   {
@@ -172,7 +174,7 @@ const routes: Array<RouteConfig> = [
     name: 'VuexModuleNamespaced',
     component: () =>
       import(
-        /* webpackChunkName: "banner" */ '@/views/VuexStore/VuexNamespace.vue'
+        /* webpackChunkName: "VuexModuleNamespaced" */ '@/views/VuexStore/VuexNamespace.vue'
       ),
   },
 
@@ -181,8 +183,15 @@ const routes: Array<RouteConfig> = [
     name: 'VuexModuleDynamic',
     component: () =>
       import(
-        /* webpackChunkName: "banner" */ '@/views/VuexStore/VuexDynamic.vue'
+        /* webpackChunkName: "VuexModuleDynamic" */ '@/views/VuexStore/VuexDynamic.vue'
       ),
+  },
+
+  {
+    path: '/v-dialog',
+    name: 'VDialog',
+    component: () =>
+      import(/* webpackChunkName: "VDialog" */ '@/views/Dialog/index.vue'),
   },
   // /v-bottom-navigation
 ]
