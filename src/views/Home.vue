@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>PICK MENU IN YOUR HEAD</h1>
+    <h1>JUST DO IT</h1>
   </div>
 </template>
 
