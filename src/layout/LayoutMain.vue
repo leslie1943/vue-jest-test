@@ -47,7 +47,7 @@ export default class Layout extends Vue {
   }
   .v-toolbar__content {
     //   background-color: steelblue;
-    background-color: #94b7bb;
+    background-color: plum;
   }
   .theme--light.v-navigation-drawer {
     background-color: #fff;
@@ -56,7 +56,8 @@ export default class Layout extends Vue {
     flex: 0 0 auto;
   }
   .v-footer {
-    background-color: #94b7bb;
+    // background-color: #363636;
+    background-color: plum;
     height: 64px;
     margin: 0px;
   }
