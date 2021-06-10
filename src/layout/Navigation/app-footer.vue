@@ -1,5 +1,5 @@
 <template>
-  <v-footer :style="layoutStyle">
+  <v-footer :style="layoutStyle" app>
     <v-row justify="center">@ Beyond</v-row>
   </v-footer>
 </template>

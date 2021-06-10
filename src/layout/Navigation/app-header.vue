@@ -1,10 +1,10 @@
 <template>
   <v-app-bar :style="layoutStyle">
     <template>
-      <v-btn class="mx-2" fab depressed @click="toggleDrawer">
-        <v-icon dark> mdi-format-list-bulleted-square </v-icon>
+      <v-btn class="mx-3" small dark fab icon @click="toggleDrawer">
+        <v-icon dark> mdi-tune </v-icon>
       </v-btn>
-      Application</template
+      <span style="color: #fff">Application</span></template
     >
   </v-app-bar>
 </template>

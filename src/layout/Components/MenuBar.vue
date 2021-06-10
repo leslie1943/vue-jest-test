@@ -1,22 +1,15 @@
 <template>
-  <div class="siderbar">
-    <v-list dense>
-      <v-list-item
-        v-for="item in items"
-        :key="item.title"
-        link
-        @click="onClickMenu(item)"
-      >
-        <v-list-item-icon>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-icon>
+  <v-list dense>
+    <v-list-item v-for="item in items" :key="item.title" link @click="onClickMenu(item)">
+      <v-list-item-icon>
+        <v-icon>{{ item.icon }}</v-icon>
+      </v-list-item-icon>
 
-        <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </div>
+      <v-list-item-content>
+        <v-list-item-title>{{ item.title }}</v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+  </v-list>
 </template>
 
 <script lang="ts">
@@ -26,28 +19,31 @@ import { SidebarMenu } from '@/types/menu.type'
 export default class UserBar extends Vue {
   items: SidebarMenu[] = [
     { title: 'Home', path: '/', icon: 'mdi-home-city' },
-    { title: 'Hello-World', path: '/hello-world', icon: 'mdi-home-city' },
-    { title: 'Message-List', path: '/message-list', icon: 'mdi-home-city' },
-    { title: 'User-Name', path: '/user-name', icon: 'mdi-home-city' },
-    { title: 'Quantity', path: '/quantity', icon: 'mdi-home-city' },
-    { title: 'Vuex-Class', path: '/vuex-class', icon: 'mdi-home-city' },
-    { title: 'Loading', path: '/loading', icon: 'mdi-home-city' },
-    { title: 'SetTimeout', path: '/set-time-out', icon: 'mdi-home-city' },
-    { title: 'Message', path: '/message', icon: 'mdi-home-city' },
-    { title: 'Depends', path: '/depends', icon: 'mdi-home-city' },
-    { title: 'About', path: '/about', icon: 'mdi-home-city' },
-    { title: 'StateChange', path: '/state-change', icon: 'mdi-home-city' },
-    { title: 'EmitOn', path: '/emit-on', icon: 'mdi-home-city' },
-    { title: 'RouterTest', path: '/router-test', icon: 'mdi-home-city' },
-    { title: 'Vuetify Menu', path: '/v-menu', icon: 'mdi-home-city' },
-    { title: 'StateChange', path: '/state-change', icon: 'mdi-home-city' },
-    { title: 'EmitOn', path: '/emit-on', icon: 'mdi-home-city' },
-    { title: 'RouterTest', path: '/router-test', icon: 'mdi-home-city' },
-    { title: 'Vuetify Menu', path: '/v-menu', icon: 'mdi-home-city' },
-    { title: 'StateChange', path: '/state-change', icon: 'mdi-home-city' },
-    { title: 'EmitOn', path: '/emit-on', icon: 'mdi-home-city' },
-    { title: 'RouterTest', path: '/router-test', icon: 'mdi-home-city' },
-    { title: 'Vuetify Menu', path: '/v-menu', icon: 'mdi-home-city' },
+    { title: 'Hello-World', path: '/hello-world', icon: 'mdi-account-box-multiple' },
+    { title: 'Message-List', path: '/message-list', icon: 'mdi-cards-club' },
+    { title: 'User-Name', path: '/user-name', icon: 'mdi-cart' },
+    { title: 'Quantity', path: '/quantity', icon: 'mdi-charity' },
+    { title: 'Vuex-Class', path: '/vuex-class', icon: 'mdi-chart-bar-stacked' },
+    { title: 'Loading', path: '/loading', icon: 'mdi-chart-tree' },
+    { title: 'SetTimeout', path: '/set-time-out', icon: 'mdi-chemical-weapon' },
+    { title: 'Message', path: '/message', icon: 'mdi-chess-king' },
+    { title: 'Depends', path: '/depends', icon: 'mdi-chili-hot' },
+    { title: 'About', path: '/about', icon: 'mdi-flask-outline' },
+
+    { title: 'StateChange', path: '/state-change', icon: 'mdi-horse-variant' },
+    { title: 'EmitOn', path: '/emit-on', icon: 'mdi-hexagon-multiple' },
+    { title: 'RouterTest', path: '/router-test', icon: 'mdi-image-filter-vintage' },
+    { title: 'Vuetify Menu', path: '/v-menu', icon: 'mdi-island' },
+
+    { title: 'Vuetify Alert', path: '/v-alert', icon: 'mdi-keyboard-esc' },
+    { title: 'Vuetify Avatar', path: '/v-avatar', icon: 'mdi-language-php' },
+    { title: 'Car Summary', path: '/summary', icon: 'mdi-language-typescript' },
+    { title: 'Car types', path: '/card-enums', icon: 'mdi-language-ruby-on-rails' },
+    { title: 'Upload Avart', path: '/upload', icon: 'mdi-mouse' },
+    { title: 'Badge', path: '/v-badge', icon: 'mdi-owl' },
+    { title: 'Banner', path: '/v-banner', icon: 'mdi-pine-tree-box' },
+    { title: 'Bottom Navigation', path: '/v-bottom-navigation', icon: 'mdi-qrcode' },
+    { title: 'Dialog', path: '/v-dialog', icon: 'mdi-snake' },
   ]
 
   onClickMenu(item: SidebarMenu): void {
@@ -55,24 +51,3 @@ export default class UserBar extends Vue {
   }
 }
 </script>
-
-<style  lang="scss" scoped>
-.siderbar {
-  overflow-y: hidden;
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    width: #888;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    width: #555;
-  }
-}
-</style>

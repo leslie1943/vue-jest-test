@@ -2,11 +2,7 @@
   <div class="main-layout-wrapper">
     <v-app class="app-wrapper">
       <AppSiderbar :visible="showSideBar" />
-      <AppHeader
-        :visible="showSideBar"
-        :layoutStyle="layoutStyle"
-        @toggle="handleToggle"
-      />
+      <AppHeader :visible="showSideBar" :layoutStyle="layoutStyle" @toggle="handleToggle" />
       <AppMain :layoutStyle="layoutStyle" />
       <AppFooter :layoutStyle="layoutStyle" />
     </v-app>
@@ -40,14 +36,16 @@ export default class Layout extends Vue {
 <style  lang="scss">
 .main-layout-wrapper {
   .app-wrapper {
-    height: 100vh;
+    min-height: 100vh;
   }
   .v-application--wrap {
     min-height: auto;
   }
   .v-toolbar__content {
     //   background-color: steelblue;
-    background-color: plum;
+    // background-color: plum;
+    // background-color: #363636;
+    background-color: #363636;
   }
   .theme--light.v-navigation-drawer {
     background-color: #fff;
@@ -57,9 +55,15 @@ export default class Layout extends Vue {
   }
   .v-footer {
     // background-color: #363636;
-    background-color: plum;
+    background-color: #363636;
+    // background-color: plum;
     height: 64px;
     margin: 0px;
+  }
+
+  .v-toolbar__content,
+  .v-toolbar__extension {
+    padding: 0px;
   }
 }
 </style>
