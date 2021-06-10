@@ -33,11 +33,11 @@ html {
   background-color: whitesmoke;
   font-family: Helvetica, sans-serif;
   margin: 0;
-  overflow-y: hidden;
+  overflow-y: scroll;
   height: 100%;
 }
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 ::-webkit-scrollbar-track {
