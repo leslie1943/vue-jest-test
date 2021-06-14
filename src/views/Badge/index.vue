@@ -13,10 +13,16 @@ import NormalBadge from '@/components/Badge/Normal.vue'
 import NotificationBadge from '@/components/Badge/Notification.vue'
 import VisibilityBadge from '@/components/Badge/Visibility.vue'
 import TabsBadge from '@/components/Badge/Tabs.vue'
+import { getCats } from '@/api/cats'
 @Component({
   components: { NormalBadge, NotificationBadge, VisibilityBadge, TabsBadge },
 })
-export default class BadgeIndex extends Vue {}
+export default class BadgeIndex extends Vue {
+  async mounted(): Promise<void> {
+    const data = await getCats()
+    console.info('data,data', data)
+  }
+}
 </script>
 
 <style>
