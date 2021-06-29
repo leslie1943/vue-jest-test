@@ -3,9 +3,7 @@
     <v-col cols="auto">
       <v-dialog transition="dialog-bottom-transition" max-width="600">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn color="primary" v-bind="attrs" v-on="on"
-            >From the bottom</v-btn
-          >
+          <v-btn color="primary" v-bind="attrs" v-on="on">From the bottom</v-btn>
         </template>
         <template v-slot:default="dialog">
           <v-card>

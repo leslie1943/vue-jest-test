@@ -44,6 +44,7 @@ export default class UserBar extends Vue {
     { title: 'Banner', path: '/v-banner', icon: 'mdi-pine-tree-box' },
     { title: 'Bottom Navigation', path: '/v-bottom-navigation', icon: 'mdi-qrcode' },
     { title: 'Dialog', path: '/v-dialog', icon: 'mdi-snake' },
+    { title: 'Drawer', path: '/v-drawer', icon: 'mdi-snake' },
   ]
 
   onClickMenu(item: SidebarMenu): void {
