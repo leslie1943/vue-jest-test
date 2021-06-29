@@ -156,6 +156,11 @@ const routes: Array<RouteConfig> = [
         name: 'VDialog',
         component: () => import(/* webpackChunkName: "VDialog" */ '@/views/Dialog/index.vue'),
       },
+      {
+        path: '/v-drawer',
+        name: 'VDrawer',
+        component: () => import(/* webpackChunkName: "VDrawer" */ '@/views/Drawer/index.vue'),
+      },
     ],
   },
 
