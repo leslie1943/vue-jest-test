@@ -156,6 +156,7 @@ const routes: Array<RouteConfig> = [
         name: 'VDialog',
         component: () => import(/* webpackChunkName: "VDialog" */ '@/views/Dialog/index.vue'),
       },
+      // test for FWC
       {
         path: '/v-drawer',
         name: 'VDrawer',
