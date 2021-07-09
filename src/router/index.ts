@@ -162,6 +162,11 @@ const routes: Array<RouteConfig> = [
         name: 'VDrawer',
         component: () => import(/* webpackChunkName: "VDrawer" */ '@/views/Drawer/index.vue'),
       },
+      {
+        path: '/vue-extends',
+        name: 'Vue-Extends',
+        component: () => import(/* webpackChunkName: "vue-extends" */ '@/views/VueExtends/index.vue'),
+      },
     ],
   },
 
