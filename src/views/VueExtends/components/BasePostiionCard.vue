@@ -1,12 +1,11 @@
 <template>
   <div class="position-card" :id="`view_${position.id}`" :style="{ opacity: getOpacity() }">
-    <!-- <card-role :type="position.type">{{ position.title }}</card-role> -->
+    <h1>This is base component</h1>
     <div>{{ position }}</div>
     <div>{{ selectedChapters }}</div>
     <div>{{ selectedTypeFromTribe }}</div>
     <div>{{ showAnalytics ? 'true' : 'false' }}</div>
     <div>{{ middlePropName }}</div>
-    <v-card hover> </v-card>
   </div>
 </template>
 
@@ -22,10 +21,10 @@ export default class BasePositionCard extends Vue {
   @Prop({ default: () => [] }) readonly selectedChapters!: Array<TitleAndColor>
   @Prop({ default: 'chapters' }) readonly selectedTypeFromTribe!: string
   @Prop() readonly showAnalytics!: boolean
-  @Prop() readonly middlePropName!: string
+  // @Prop() readonly middlePropName!: string
 
   mounted(): void {
-    console.info(this.middlePropName)
+    // console.info(this.middlePropName)
   }
 
   get detail(): string {
@@ -33,7 +32,6 @@ export default class BasePositionCard extends Vue {
   }
 
   getColor(): string {
-    console.info(this.middlePropName)
     return ''
   }
 
