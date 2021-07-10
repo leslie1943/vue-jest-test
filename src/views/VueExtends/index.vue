@@ -33,6 +33,6 @@ export default class VueExtends extends Vue {
   ]
   selectedTypeFromTribe = 'chapter'
 
-  middlePropName = 'I am the middle name'
+  middlePropName = 'I am the middle prop name'
 }
 </script>
