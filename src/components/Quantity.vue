@@ -1,13 +1,6 @@
 <template>
   <div>
-    <v-text-field
-      label="PRESS '⬆' '⬇' TO CHANGE THE COUNT, AND PRESS 'ESC' WOULD RESET"
-      type="text"
-      placeholder="ss"
-      @keydown.prevent="onKeyEvent"
-      v-model="count"
-      id="res"
-    />
+    <v-text-field label="PRESS '⬆' '⬇' TO CHANGE THE COUNT, AND PRESS 'ESC' WOULD RESET" type="text" placeholder="ss" @keydown.prevent="onKeyEvent" v-model="count" id="res" />
 
     <v-divider />
     <v-btn id="plus" @click="increment">Increment</v-btn>
@@ -24,6 +17,7 @@ export default class Count extends Vue {
   @Prop() private msg!: string
   @Prop() private age!: number
   count = 0
+  statusText = ''
 
   // eslint-disable-next-line
   increment($event?: any): void {
@@ -60,6 +54,7 @@ export default class Count extends Vue {
   @Watch('count')
   changeCount(newValue: number): void {
     console.info('newValue', newValue)
+    this.statusText = newValue.toString()
   }
 }
 </script>

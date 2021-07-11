@@ -48,8 +48,17 @@ describe('Username.vue', () => {
     expect(wrapper.find('#fixed').exists()).toBeTruthy()
   })
 
-  // Assert 6 test style
-  // it('check id in bottom', () => {
-  //   const wrapper = maker({ username: 'leslie_su' })
-  // })
+  it('handleChange console.log', () => {
+    const wrapper = maker({ username: 'leslie_su' })
+    const spy = jest.spyOn(console, 'info')
+    ;(wrapper.vm as any).handleChange()
+    expect(spy).toHaveBeenCalled()
+  })
+
+  it('handleInput console.log', () => {
+    const wrapper = maker({ username: 'leslie_su' })
+    const spy = jest.spyOn(console, 'info')
+    ;(wrapper.vm as any).handleInput()
+    expect(spy).toHaveBeenCalled()
+  })
 })
