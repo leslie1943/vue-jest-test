@@ -17,7 +17,7 @@
  * 点击元素一下实现数字自增:
  *
  */
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import Quantity from '@/components/Quantity.vue'
 
 describe('Quantity.vue', () => {
@@ -65,4 +65,9 @@ describe('Quantity.vue', () => {
     inputRes.trigger('keydown') // TODO:
     // expect(wrapper.vm.$data.count).toBe(1)
   })
+
+  // it('test watch', async () => {
+  //   const wrapper = shallowMount(Quantity)
+  //   const spy = jest.spyOn(console, 'log')
+  // })
 })
