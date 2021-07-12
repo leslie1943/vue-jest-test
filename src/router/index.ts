@@ -167,6 +167,11 @@ const routes: Array<RouteConfig> = [
         name: 'Vue-Extends',
         component: () => import(/* webpackChunkName: "vue-extends" */ '@/views/VueExtends/index.vue'),
       },
+      {
+        path: '/vue-jest',
+        name: 'Vue-jest',
+        component: () => import(/* webpackChunkName: "vue-extends" */ '@/views/Jest/index.vue'),
+      },
     ],
   },
 
