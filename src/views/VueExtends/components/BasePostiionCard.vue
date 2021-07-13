@@ -1,34 +1,25 @@
 <template>
-  <div class="position-card" :id="`view_${position.id}`" :style="{ opacity: getOpacity() }">
+  <div class="position-card" :id="`view_${position.id}`" :style="{ opacity: getOpacity(), color: getColor() }">
     <h1>This is base component</h1>
     <div>{{ position }}</div>
-    <div>{{ selectedChapters }}</div>
-    <div>{{ selectedTypeFromTribe }}</div>
-    <div>{{ showAnalytics ? 'true' : 'false' }}</div>
-    <div>{{ middlePropName }}</div>
+    <div>selectedChapters >>>>>>> {{ selectedChapters }}</div>
+    <div>selectedTypeFromTribe >>>>>>> {{ selectedTypeFromTribe }}</div>
+    <div>showAnalytics >>>>>>> {{ showAnalytics ? 'true' : 'false' }}</div>
+    <div>middlePropName >>>>>>> {{ middlePropName }}</div>
+    <div>isVisible is true in Business component {{ isVisible }}</div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
-
-type TitleAndColor = { title: string; color: string }
-type PositionItem = { id: number; type: string; title: string; name: string; age: number; chapterArea: string }
+import { Component, Vue } from 'vue-property-decorator'
 
 @Component({})
 export default class BasePositionCard extends Vue {
-  @Prop() readonly position!: PositionItem
-  @Prop({ default: () => [] }) readonly selectedChapters!: Array<TitleAndColor>
-  @Prop({ default: 'chapters' }) readonly selectedTypeFromTribe!: string
-  @Prop() readonly showAnalytics!: boolean
-  // @Prop() readonly middlePropName!: string
-
-  mounted(): void {
-    // console.info(this.middlePropName)
-  }
+  // overwrite by PositionHomeViewCard.vue
+  isVisible = 'isVisible in BasePostiionCard.vue'
 
   get detail(): string {
-    return this.position.chapterArea
+    return ''
   }
 
   getColor(): string {
