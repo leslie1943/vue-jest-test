@@ -14,5 +14,9 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  created(): void {
+    this.$bus.emit('app-bus-home')
+  }
+}
 </script>

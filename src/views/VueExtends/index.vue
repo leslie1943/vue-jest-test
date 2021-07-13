@@ -27,9 +27,9 @@ export default class VueExtends extends Vue {
     chapterArea: 'China',
   }
   selectedChapters: TitleAndColor[] = [
-    { title: 'chapter', color: 'red' },
-    { title: 'team', color: 'purple' },
-    { title: 'domain', color: 'tomato' },
+    { title: 'chapter', color: '#67C23A' },
+    { title: 'team', color: '#F56C6C' },
+    { title: 'domain', color: '#409EFF' },
   ]
   selectedTypeFromTribe = 'chapter'
 

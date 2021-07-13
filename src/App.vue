@@ -1,6 +1,10 @@
 <template>
   <!-- <LayoutMain /> -->
-  <router-view></router-view>
+  <div>
+    <div>this.$bus.on >>>>>>> {{ appBusData }}</div>
+    <div>this.$bus.once >>>>>>> {{ appBusDataOnce }}</div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script lang="ts">
@@ -10,7 +14,20 @@ import TopMenu from '@/components/common/TopMenu.vue'
 import LayoutMain from '@/layout/LayoutMain.vue'
 
 @Component({ components: { TopMenu, LayoutMain } })
-export default class App extends Vue {}
+export default class App extends Vue {
+  appBusData: string[] = []
+  appBusDataOnce: string[] = []
+  created(): void {
+    this.$bus.on('app-bus-home', this.addAppBus)
+    this.$bus.once('app-bus-home', this.addAppBusOnce)
+  }
+  addAppBus(): void {
+    this.appBusData.push(new Date().getTime().toString())
+  }
+  addAppBusOnce(): void {
+    this.appBusDataOnce.push(new Date().getTime().toString())
+  }
+}
 </script>
 
 <style lang="scss">
