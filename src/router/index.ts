@@ -5,6 +5,13 @@ import LayoutMain from '@/layout/LayoutMain.vue'
 
 Vue.use(VueRouter)
 
+//获取原型对象上的push函数
+const originalPush = VueRouter.prototype.push
+//修改原型对象中的push方法
+VueRouter.prototype.push = function push(location: RouteConfig) {
+  return (originalPush.call(this, location) as any).catch((err: any) => err)
+}
+
 const routes: Array<RouteConfig> = [
   {
     path: '/',

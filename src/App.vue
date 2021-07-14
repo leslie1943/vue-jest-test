@@ -1,8 +1,5 @@
 <template>
-  <!-- <LayoutMain /> -->
   <div>
-    <div>this.$bus.on >>>>>>> {{ appBusData }}</div>
-    <div>this.$bus.once >>>>>>> {{ appBusDataOnce }}</div>
     <router-view></router-view>
   </div>
 </template>
@@ -12,20 +9,22 @@ import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
 import TopMenu from '@/components/common/TopMenu.vue'
 import LayoutMain from '@/layout/LayoutMain.vue'
+import { Action } from 'vuex-class'
 
 @Component({ components: { TopMenu, LayoutMain } })
 export default class App extends Vue {
-  appBusData: string[] = []
-  appBusDataOnce: string[] = []
+  // dynamic 的 module 可以使用 namespace的形式.
+  @Action('changeBusTimer', { namespace: 'bus' }) changeBusTimer!: () => Promise<void>
   created(): void {
     this.$bus.on('app-bus-home', this.addAppBus)
     this.$bus.once('app-bus-home', this.addAppBusOnce)
   }
   addAppBus(): void {
-    this.appBusData.push(new Date().getTime().toString())
+    this.changeBusTimer()
+    // VueBUsStoreModule.changeBusTimer()
   }
   addAppBusOnce(): void {
-    this.appBusDataOnce.push(new Date().getTime().toString())
+    this.changeBusTimer()
   }
 }
 </script>
