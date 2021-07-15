@@ -1,8 +1,8 @@
 <template>
-  <div class="home" v-loading="loading">
+  <div class="home">
     <h1>JUST DO IT</h1>
     <v-divider class="my-4 info"></v-divider>
-    <v-btn color="primary" @click="emitBus">emit vue bus to change store state</v-btn>
+    <v-btn :loading="loading" color="primary" @click="emitBus">emit vue bus to change store state</v-btn>
     <v-divider class="my-4 info"></v-divider>
     <h2>Global bus timer records: {{ busTimerData }}</h2>
     <img
