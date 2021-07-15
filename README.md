@@ -12,3 +12,7 @@
 - setSelected
 - setProps
 - trigger
+
+### 添加路由和菜单
+- `src\layout\Components\MenuBar.vue`
+- `src\router`

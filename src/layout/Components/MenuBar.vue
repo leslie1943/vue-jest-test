@@ -44,10 +44,11 @@ export default class UserBar extends Vue {
     { title: 'Banner', path: '/v-banner', icon: 'mdi-pine-tree-box' },
     { title: 'Bottom Navigation', path: '/v-bottom-navigation', icon: 'mdi-qrcode' },
     { title: 'Dialog', path: '/v-dialog', icon: 'mdi-snake' },
-    { title: 'Drawer', path: '/v-drawer', icon: 'mdi-snake' },
-    { title: 'Jest', path: '/vue-jest', icon: 'mdi-snake' },
-    { title: 'Extends', path: '/vue-extends', icon: 'mdi-snake' },
-    { title: 'Vue-jest', path: '/vue-jest', icon: 'mdi-snake' },
+    { title: 'Drawer', path: '/v-drawer', icon: 'mdi-bike' },
+    { title: 'Jest', path: '/vue-jest', icon: 'mdi-blinds ' },
+    { title: 'Extends', path: '/vue-extends', icon: 'mdi-bomb' },
+    { title: 'Vue-jest', path: '/vue-jest', icon: 'mdi-book-settings' },
+    { title: 'Text-slot', path: '/text-slot', icon: 'mdi-book-minus' },
   ]
 
   onClickMenu(item: SidebarMenu): void {

@@ -177,7 +177,12 @@ const routes: Array<RouteConfig> = [
       {
         path: '/vue-jest',
         name: 'Vue-jest',
-        component: () => import(/* webpackChunkName: "vue-extends" */ '@/views/Jest/index.vue'),
+        component: () => import(/* webpackChunkName: "Vue-jest" */ '@/views/Jest/index.vue'),
+      },
+      {
+        path: '/text-slot',
+        name: 'text-slot',
+        component: () => import(/* webpackChunkName: "text-slot" */ '@/views/TextSlot/index.vue'),
       },
     ],
   },
