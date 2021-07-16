@@ -49,6 +49,7 @@ export default class UserBar extends Vue {
     { title: 'Extends', path: '/vue-extends', icon: 'mdi-bomb' },
     { title: 'Vue-jest', path: '/vue-jest', icon: 'mdi-book-settings' },
     { title: 'Text-slot', path: '/text-slot', icon: 'mdi-book-minus' },
+    { title: 'lodash', path: '/lodash', icon: 'mdi-book-minus' },
   ]
 
   onClickMenu(item: SidebarMenu): void {
