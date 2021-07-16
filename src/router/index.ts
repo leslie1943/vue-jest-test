@@ -184,6 +184,11 @@ const routes: Array<RouteConfig> = [
         name: 'text-slot',
         component: () => import(/* webpackChunkName: "text-slot" */ '@/views/TextSlot/index.vue'),
       },
+      {
+        path: '/lodash',
+        name: 'lodash',
+        component: () => import(/* webpackChunkName: "lodash" */ '@/views/Lodash/index.vue'),
+      },
     ],
   },
 
