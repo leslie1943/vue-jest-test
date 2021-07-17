@@ -1,18 +1,18 @@
 <template>
   <v-container class="grey lighten-5">
-    <!-- <div>Global bus timer records: {{ busTimerData }}</div> -->
+    <div>Global bus timer records: {{ busTimerData }}</div>
     <v-divider />
     <v-btn color="primary" @click="onClick">this.$bus.emit('app-bus-home') be registed in Home Page</v-btn>
   </v-container>
 </template>
 
 <script lang="ts">
-// import { AppState } from '@/store'
+import { AppState } from '@/store'
 import { Vue, Component } from 'vue-property-decorator'
-// import { State } from 'vuex-class'
+import { State } from 'vuex-class'
 @Component({ name: 'JestEmit', components: {} })
 export default class JestEmit extends Vue {
-  //   @State((state: AppState) => state.bus?.busTimerData) busTimerData!: string[]
+  @State((state: AppState) => state.bus?.busTimerData) busTimerData!: string[]
 
   onClick(): void {
     this.$emit('foo')
