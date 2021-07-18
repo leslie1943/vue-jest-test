@@ -26,6 +26,7 @@ export default class ComponentBuilder {
   mixins: any
 
   constructor(component: any, vueElements = []) {
+    // the property of initial
     this.component = component
     this.router = new VueRouter()
     this.actions = {}
@@ -37,19 +38,21 @@ export default class ComponentBuilder {
     this.stubs = []
     this.provide = {}
     this.mixins = []
+    // use localVue to mock plugins
     this.localVue = createLocalVue()
     this.localVue.use(Vuex)
     this.localVue.use(VueRouter)
     this.localVue.use(VueBus)
     this.localVue.use(VueCoookies)
+    // register mixin plugins
     this.mixins.map((mixin: any) => this.localVue.mixins(mixin))
 
     vueElements.forEach((e) => this.localVue.use(e))
   }
 
-  static init(component: any, vueUse: any) {
-    return new ComponentBuilder(component, vueUse)
-  }
+  // static init(component: any, vueUse: any) {
+  //   return new ComponentBuilder(component, vueUse)
+  // }
 
   addActions(actions = {}): ComponentBuilder {
     this.actions = merge(this.actions, actions)
@@ -117,6 +120,7 @@ export default class ComponentBuilder {
     return this
   }
 
+  // computed to get options for `mount` | `shallowMount` event
   get config() {
     return {
       localVue: this.localVue,

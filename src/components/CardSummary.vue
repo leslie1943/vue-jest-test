@@ -40,6 +40,8 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 export default class SummaryCardIndex extends Vue {
   @Prop({ required: true }) readonly title!: string
   @Prop({ required: true }) readonly route!: string
+
+  name = ['su', 'zhen']
 }
 </script>
 

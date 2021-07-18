@@ -10,8 +10,19 @@ describe('Test Component', () => {
         route: '/home',
       },
     })
-
     expect(wrapper.props('title')).toBe('Hello Leslie')
     expect(wrapper.props('route')).toBe('/home')
+  })
+
+  it('render heading', () => {
+    const wrapper = shallowMount(CardSummary, {
+      stubs: ['router-link', 'router-view', 'v-btn'],
+      propsData: {
+        title: 'Hello Leslie',
+        route: '/home',
+      },
+    })
+    expect(wrapper.vm.$props.title).toBe('Hello Leslie')
+    expect(wrapper.vm.$props.route).toBe('/home')
   })
 })
