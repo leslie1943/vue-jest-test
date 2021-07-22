@@ -1,47 +1,100 @@
-import video from '@/jest-fns/video'
+import fetch from './__utils__/fetch'
+import JestInteraction from '@/views/Jest/components/jest-interaction.vue'
+import { shallowMount, mount } from '@vue/test-utils'
 
-describe('Test jest.spyOn ', () => {
-  it('Test jest.spyOn => toHaveBeenCalled 1', () => {
-    const onPlay = jest.spyOn(video, 'play')
-    onPlay.mockReturnValue(true) // video.play() 返回值不定, 需要 mock return value
-    const playStatus = video.play() // 此时方法返回值不确定
-    expect(onPlay).toHaveBeenCalled()
-    expect(playStatus).toBe(true)
+describe('Test jest.fn ', () => {
+  it('1: Test call jest.fn()', () => {
+    const mockFn = jest.fn()
+    const result = mockFn(1, 2, 3, 4)
+    expect(result).toBeUndefined()
+    expect(mockFn).toBeCalled()
+    expect(mockFn).toBeCalledTimes(1)
+    expect(mockFn).toBeCalledWith(1, 2, 3, 4)
   })
 
-  it('Test jest.spyOn => toHaveBeenCalled 2', () => {
-    const spyPlay = jest.spyOn(video, 'play')
-    spyPlay.mockReturnValue(false)
-    expect(spyPlay).toHaveBeenCalled()
-    expect(video.play()).toBe(false)
-    spyPlay.mockRestore()
+  it('2: Test jest.fn() return default value', () => {
+    const mockFn = jest.fn().mockReturnValue('default')
+    expect(mockFn()).toBe('default')
   })
 
-  it('Test jest.spyOn => toHaveBeenCalledTimes 1', () => {
-    const spyPlay = jest.spyOn(video, 'play')
-    spyPlay.mockReturnValue(true)
-
-    const playing = video.play()
-    expect(spyPlay).toHaveBeenCalled()
-    expect(spyPlay).toHaveBeenCalledTimes(1)
-    expect(playing).toBe(true)
-
-    spyPlay.mockRestore()
+  it('3: Test jest.fn() internal implementation', () => {
+    const mockFn = jest.fn((a, b) => {
+      return a + b
+    })
+    expect(mockFn(10, 10)).toBe(20)
   })
 
-  it('Test jest.spyOn => toHaveBeenCalledTimes 2', () => {
-    const spyPlay = jest.spyOn(video, 'play')
-    spyPlay.mockReturnValue(true)
+  it('4: Test jest.fn() return Promise', async () => {
+    const mockFn = jest.fn().mockResolvedValue('promise default')
+    const result = await mockFn()
+    // 断言 mockFn 通过 await 关键字执行后返回值为 promise default
+    expect(result).toBe('promise default')
+    // 断言mockFn调用后返回的是Promise对象
+    expect(Object.prototype.toString.call(mockFn())).toBe('[object Promise]')
+  })
 
-    const playing = video.play()
-    expect(spyPlay).toHaveBeenCalled()
-    expect(spyPlay).toHaveBeenCalledTimes(1)
-    expect(playing).toBe(true)
+  it('5: Test callback value', async () => {
+    const mockFn = jest.fn().mockResolvedValue('Fetch OK')
+    const res = await fetch.fetchPostList(mockFn)
+    // 断言 mockFn be invoked
+    expect(mockFn).toBeCalled()
+    expect(res).toBe('Fetch OK')
+  })
 
-    // 再次触发
-    video.play()
-    expect(spyPlay).toHaveBeenCalledTimes(2)
+  it('6: Test for Vue - 1', async () => {
+    const wrapper = shallowMount(JestInteraction, {})
+    await (wrapper.vm as any).toHome('hello')
+    expect(wrapper.vm.$data.msg).toBe('hello')
+  })
 
-    spyPlay.mockRestore()
+  it('7: Test for Vue - 2', async () => {
+    const setFn = jest.fn()
+    const wrapper = shallowMount(JestInteraction, {
+      mocks: {
+        $set: setFn,
+      },
+    })
+    await (wrapper.vm as any).toHome('Hello World')
+    expect(wrapper.vm.$data.msg).toBe('Hello World')
+    expect(wrapper.vm.$set).toBeCalled()
+    expect(setFn).toBeCalled()
+  })
+
+  it('8: Test for Vue - 3', async () => {
+    const message = {
+      success: jest.fn(),
+      warning: jest.fn(),
+      error: jest.fn(),
+      info: jest.fn(),
+    }
+    const wrapper = shallowMount(JestInteraction, {
+      mocks: {
+        $message: message,
+      },
+    })
+    ;(wrapper.vm as any).showMsg()
+    expect(message.success).toBeCalled()
+    expect(message.warning).toBeCalled()
+    expect(message.error).toBeCalled()
+    expect(message.info).toBeCalled()
+  })
+
+  it('9: Test for Vue - 4', async () => {
+    // const getNameMock = jest.fn()
+    const wrapper = mount(JestInteraction)
+    const mockGetName = jest.spyOn(wrapper.vm as any, 'getName')
+    ;(wrapper.vm as any).getPerson()
+    expect(mockGetName).toBeCalled()
   })
 })
+
+/**
+ * 1:::::: jest.fn 定义一个方法 mockFn
+ * 2:::::: 将模拟的 mockFn 赋值给当前组件的 测试文件的
+ *    { mocks:
+ *      { $emit:mockFn }
+ *    }
+ *    实际组件中: this.$emit('custom')
+ * 3:::::: 触发组件自定义的事件:  ==> 事件内部的 this.$emit 会被执行
+ * 4:::::: this.$emit 在测试文件中指向 mockFn  ==> 那么 mockFn 就会被 执行
+ */
