@@ -35,6 +35,17 @@ export default class JestTestInteraction extends Vue {
   getName(): void {
     console.info('getName')
   }
+  getAge(): void {
+    this.$message.success('1234')
+  }
+
+  test(): void {
+    console.info('$test')
+  }
+
+  getCompanyName(): string {
+    return 'Hello Wworld'
+  }
 }
 </script>
 

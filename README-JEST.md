@@ -35,8 +35,6 @@ expect(wrapper.vm.$props.route).toBe('/home')
 - `jest.mock` 模拟模块时使用: 
 - `spyOn`: when you want to observe things about a real module or function
 
-
-
 ### z-test-99-route-in-component.spec
 ```ts
 // it('should call beforeRouteUpdate from Position to Edit Position ', async () => {
