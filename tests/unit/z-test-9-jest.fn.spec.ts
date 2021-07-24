@@ -82,9 +82,14 @@ describe('Test jest.fn ', () => {
   it('9: Test for Vue - 4', async () => {
     // const getNameMock = jest.fn()
     const wrapper = mount(JestInteraction)
+    // mock 组件内的 getName 方法
     const mockGetName = jest.spyOn(wrapper.vm as any, 'getName')
+    // const mockGeetAge = jest.spyOn(wrapper.vm as any, 'getAge')
+    // 当调用 getPerson 的时候, 组件内部会调用 this.getName()
     ;(wrapper.vm as any).getPerson()
+    // 此时 步骤一中的 mock 的方法 也被断言为执行
     expect(mockGetName).toBeCalled()
+    // expect(mockGeetAge).toBeCalled()
   })
 })
 
