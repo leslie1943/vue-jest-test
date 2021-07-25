@@ -1,6 +1,7 @@
 <template>
   <v-container class="grey lighten-5">
     <v-btn color="primary" @click="add">Add up</v-btn>
+    <v-btn class="incre" color="primary" @click="increment">increment</v-btn>
     <p>Total clicks:{{ count }}</p>
     <v-btn color="primary" @click="toHome">Add up</v-btn>
   </v-container>
@@ -13,9 +14,19 @@ export default class JestTestInteraction extends Vue {
   count = 0
   msg = ''
   person = { name: '', age: 10 }
+
   add(): void {
     this.count++
   }
+
+  increment(): void {
+    this.count++
+  }
+
+  triggerIncremente(): void {
+    this.increment()
+  }
+
   toHome(msg: string): void {
     this.msg = msg
     this.$set(this.person, 'name', msg)
@@ -45,6 +56,12 @@ export default class JestTestInteraction extends Vue {
 
   getCompanyName(): string {
     return 'Hello Wworld'
+  }
+
+  getMan(): void {
+    this.getName()
+    this.getAge()
+    this.getCompanyName()
   }
 }
 </script>

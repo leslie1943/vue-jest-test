@@ -28,6 +28,7 @@ describe('Test jest.spyOn ', () => {
     // 通过 spyOn mock => getCompanyName 方法 并确认返回值为 'LESLIE'
     jest.spyOn(wrapper.vm as any, 'getCompanyName').mockReturnValue('LESLIE')
     // 无论组件内部的返回值 返回的是什么都会被忽略, 因为上述方法已经确认 返回 LESLIE
+    // 💛💛💛 改变函数的内部实现 💛💛💛
     const res = await (wrapper.vm as any).getCompanyName()
     expect(res).toBe('LESLIE')
   })
@@ -48,5 +49,19 @@ describe('Test jest.spyOn ', () => {
     // 模拟的被调用
     expect(mockGetAge).toBeCalled()
     expect(message.success).toBeCalled()
+  })
+
+  it('5: Test spyOn for other functions in initial call', async () => {
+    const wrapper = mount(JestInteraction, {})
+    // 模拟组件内的方法 getAge
+    const mockGetName = jest.spyOn(wrapper.vm as any, 'getName')
+    const mockGetAge = jest.spyOn(wrapper.vm as any, 'getAge')
+    const mockGetCompanyName = jest.spyOn(wrapper.vm as any, 'getCompanyName')
+    // 触发组件内的 方法
+    await (wrapper.vm as any).getMan()
+    // 模拟的被调用
+    expect(mockGetName).toBeCalled()
+    expect(mockGetAge).toBeCalled()
+    expect(mockGetCompanyName).toBeCalled()
   })
 })
