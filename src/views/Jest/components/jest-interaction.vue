@@ -15,6 +15,10 @@ export default class JestTestInteraction extends Vue {
   msg = ''
   person = { name: '', age: 10 }
 
+  mouted(): void {
+    this.$emit('submit-request', this.person)
+  }
+
   add(): void {
     this.count++
   }
