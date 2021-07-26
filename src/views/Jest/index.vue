@@ -21,7 +21,7 @@ import { Vue, Component } from 'vue-property-decorator'
 })
 export default class JestIndex extends Vue {
   created(): void {
-    this.$on('submit-request', this.submit)
+    this.$bus.on('submit-request', this.submit)
   }
 
   submit(values: { name: string; age: number }): void {

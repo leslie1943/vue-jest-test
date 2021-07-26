@@ -67,7 +67,6 @@ export default class UserBar extends Vue {
     },
     { title: 'Dialog', path: '/v-dialog', icon: 'mdi-snake' },
     { title: 'Drawer', path: '/v-drawer', icon: 'mdi-bike' },
-    { title: 'Jest', path: '/vue-jest', icon: 'mdi-blinds ' },
     { title: 'Extends', path: '/vue-extends', icon: 'mdi-bomb' },
     { title: 'Vue-jest', path: '/vue-jest', icon: 'mdi-book-settings' },
     { title: 'Text-slot', path: '/text-slot', icon: 'mdi-book-minus' },

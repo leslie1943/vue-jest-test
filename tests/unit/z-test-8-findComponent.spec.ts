@@ -5,8 +5,15 @@ import JestInteraction from '@/views/Jest/components/jest-interaction.vue'
 import HelloWorld from '@/views/HelloWorld/index.vue'
 
 describe('wrapper.findComponent', () => {
+  const mocks = {
+    $bus: {
+      on: jest.fn(),
+    },
+  }
   it('TeTest findComponent exist', () => {
-    const wrapper = shallowMount(JestMain)
+    const wrapper = shallowMount(JestMain, {
+      mocks: mocks,
+    })
     const emit = wrapper.findComponent(JestEmit)
     expect(emit.exists()).toBe(true)
 
@@ -15,19 +22,25 @@ describe('wrapper.findComponent', () => {
   })
 
   it('Test findComponent not exist ', () => {
-    const wrapper = shallowMount(JestMain)
+    const wrapper = shallowMount(JestMain, {
+      mocks: mocks,
+    })
     const hello = wrapper.findComponent(HelloWorld)
     expect(hello.exists()).toBe(false)
   })
 
   it('Test findComponents', () => {
-    const wrapper = shallowMount(JestMain)
+    const wrapper = shallowMount(JestMain, {
+      mocks: mocks,
+    })
     const interaction = wrapper.findAllComponents(JestInteraction).at(0)
     expect(interaction.exists()).toBeTruthy()
   })
 
   it('Test findComponents', () => {
-    const wrapper = shallowMount(JestMain)
+    const wrapper = shallowMount(JestMain, {
+      mocks: mocks,
+    })
     const interactions = wrapper.findAllComponents(JestInteraction)
     expect(interactions).toHaveLength(2)
   })
