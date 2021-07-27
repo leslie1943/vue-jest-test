@@ -4,6 +4,7 @@
     <v-btn class="incre" color="primary" @click="increment">increment</v-btn>
     <p>Total clicks:{{ count }}</p>
     <v-btn color="primary" @click="toHome">Add up</v-btn>
+    <v-btn color="primary" @click="toEmit">emit</v-btn>
   </v-container>
 </template>
 
@@ -15,11 +16,12 @@ export default class JestTestInteraction extends Vue {
   msg = ''
   person = { name: '', age: 10 }
 
-  mouted(): void {
-    this.$emit('submit-request', this.person)
+  add(): void {
+    this.count++
   }
 
-  add(): void {
+  toEmit(): void {
+    this.$bus.emit('submit-request', this.person)
     this.count++
   }
 
