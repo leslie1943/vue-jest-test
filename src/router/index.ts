@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import LoginLayout from '@/layout/LoginLayout.vue'
 import LayoutMain from '@/layout/LayoutMain.vue'
+import TOP_LOADING from '@/plugins/util-top-loading'
 
 Vue.use(VueRouter)
 
@@ -288,6 +289,15 @@ const routes: Array<RouteConfig> = [
 
 const router = new VueRouter({
   routes,
+})
+
+router.beforeEach(async (to, from, next) => {
+  TOP_LOADING.start()
+  next()
+})
+
+router.afterEach(() => {
+  TOP_LOADING.done()
 })
 
 export default router
