@@ -14,7 +14,7 @@ import { Vue, Component } from 'vue-property-decorator'
 export default class JestTestInteraction extends Vue {
   count = 0
   msg = ''
-  person = { name: '', age: 10 }
+  person = { name: 'leslie', age: 10 }
 
   add(): void {
     this.count++

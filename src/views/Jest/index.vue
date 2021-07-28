@@ -18,9 +18,18 @@ import { Vue, Component } from 'vue-property-decorator'
 @Component({
   name: 'JestIndex',
   components: { JestInteraction, JestAxios, JestEmit },
+  beforeRouteLeave(to, from, next) {
+    if (to.path === '/home') {
+      ;(this as any).showSuccess()
+    } else {
+      ;(this as any).showInfo()
+    }
+    next()
+  },
 })
 export default class JestIndex extends Vue {
   created(): void {
+    console.info(this.$route)
     this.$bus.on('submit-request', this.submit)
   }
 
@@ -28,6 +37,14 @@ export default class JestIndex extends Vue {
     console.info('<<<<<submit>>>>>')
     console.info(values.name)
     console.info(values.age)
+  }
+
+  showSuccess(): void {
+    this.$message.success('Hello trigger beforeRouteUpdate!')
+  }
+
+  showInfo(): void {
+    this.$message.info('Hello trigger beforeRouteUpdate!')
   }
 }
 </script>

@@ -2,7 +2,11 @@
   <div class="main-layout-wrapper">
     <v-app class="app-wrapper">
       <AppSiderbar :visible="showSideBar" />
-      <AppHeader :visible="showSideBar" :layoutStyle="layoutStyle" @toggle="handleToggle" />
+      <AppHeader
+        :visible="showSideBar"
+        :layoutStyle="layoutStyle"
+        @toggle="handleToggle"
+      />
       <AppMain :layoutStyle="layoutStyle" />
       <AppFooter :layoutStyle="layoutStyle" />
     </v-app>
@@ -17,7 +21,9 @@ import AppMain from './Navigation/app-main.vue'
 import AppFooter from './Navigation/app-footer.vue'
 import { LayoutStyleType } from '@/types/layout.type'
 
-@Component({ components: { AppSiderbar, AppHeader, AppMain, AppFooter } })
+@Component({
+  components: { AppSiderbar, AppHeader, AppMain, AppFooter },
+})
 export default class Layout extends Vue {
   @Provide() headerMsg = ''
   @Provide() headerColor = 'purple'
