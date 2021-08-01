@@ -33,7 +33,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx", "src/jest-fns/check-localstorage.js"
+    "tests/**/*.tsx", "src/jest-fns/check-localstorage.ts"
   ],
   "exclude": [
     "node_modules"
