@@ -1,12 +1,12 @@
 /* eslint-disable */
 let sizeStore = 0
-if (window.localStorage) {
+if ((window as Window).localStorage) {
   // 遍历所有存储
-  for (item in window.localStorage) {
+  for (const item in window.localStorage) {
     if (window.localStorage.hasOwnProperty(item)) {
-      const size = window.localStorage.getItem(item).length
+      const size = window.localStorage.getItem(item)?.length
       console.info(item, size)
-      sizeStore += size
+      sizeStore += size ?? 0
     }
   }
 }

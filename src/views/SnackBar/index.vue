@@ -16,16 +16,27 @@
         </v-btn>
       </template>
     </v-snackbar>
+
+    <v-btn @click="handleValid">Validate for child component</v-btn>
+
+    <v-divider></v-divider>
+    <ValidationForm ref="validation"></ValidationForm>
   </div>
 </template>
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
-@Component({ name: 'SnackBar' })
+import { Vue, Component, Ref } from 'vue-property-decorator'
+import ValidationForm from './v-forms/validation.vue'
+@Component({ name: 'SnackBar', components: { ValidationForm } })
 export default class SnackBar extends Vue {
+  @Ref('validation') readonly validationRef!: ValidationForm
   snackbar = false
   text = ['Gavin', 'Hazel', 'Vivian', 'Neo', 'Ryan', 'Peter', 'Lesie']
 
   vertical = true
+
+  handleValid(): void {
+    this.validationRef.validate()
+  }
 }
 </script>
 
