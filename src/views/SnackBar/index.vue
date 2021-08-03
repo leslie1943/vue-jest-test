@@ -25,7 +25,7 @@
 </template>
 <script lang="ts">
 import { Vue, Component, Ref } from 'vue-property-decorator'
-import ValidationForm from './v-forms/validation.vue'
+import ValidationForm from './v-forms/validation-form.vue'
 @Component({ name: 'SnackBar', components: { ValidationForm } })
 export default class SnackBar extends Vue {
   @Ref('validation') readonly validationRef!: ValidationForm
