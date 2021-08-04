@@ -1,6 +1,11 @@
 <template>
   <v-row justify="center" style="padding: 20px">
-    <v-dialog v-model="dialog" persistent max-width="600px">
+    <v-dialog
+      v-model="dialog"
+      persistent
+      max-width="600px"
+      content-class="customer-dialog"
+    >
       <template v-slot:activator="{ on, attrs }">
         <v-btn color="primary" dark v-bind="attrs" v-on="on">
           Open Dialog
@@ -89,3 +94,9 @@ export default class FormDialog extends Vue {
   dialog = false
 }
 </script>
+
+<style lang="scss" >
+.customer-dialog {
+  margin-left: 30%;
+}
+</style>
