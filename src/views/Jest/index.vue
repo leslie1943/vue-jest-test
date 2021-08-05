@@ -7,6 +7,10 @@
     <JestAxios />
     <v-divider />
     <JestEmit />
+    <v-divider />
+    {{ 'Y' | YN }}
+    {{ 'D' | YN }}
+    {{ 'N' | YN }}
   </div>
 </template>
 
@@ -25,6 +29,16 @@ import { Vue, Component } from 'vue-property-decorator'
       ;(this as any).showInfo()
     }
     next()
+  },
+  filters: {
+    YN(val: 'Y' | 'N'): string {
+      if (!val) return ''
+      const options = {
+        Y: 'Yes',
+        N: 'No',
+      }
+      return options[val]
+    },
   },
 })
 export default class JestIndex extends Vue {
