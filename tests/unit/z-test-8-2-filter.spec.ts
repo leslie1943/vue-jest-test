@@ -10,6 +10,12 @@ describe('wrapper.findComponent', () => {
   it('Test Filter', () => {
     const wrapper = shallowMount(JestMain, {
       mocks: mocks,
+      propsData: {
+        person: {
+          name: 'su',
+          nage: 22,
+        },
+      },
     })
     expect((wrapper.vm.$options as any).filters.YN('Y')).toBe('Yes')
     expect((wrapper.vm.$options as any).filters.YN('N')).toBe('No')
