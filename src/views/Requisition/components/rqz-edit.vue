@@ -1,7 +1,7 @@
 <template>
   <div>
     <rqz-type />
-    <rqz-man @man-change="handleManChange" />
+    <rqz-man @man-change="handleManChange" @hero-change="handleHeroChange" />
   </div>
 </template>
 <script lang="ts">
@@ -14,6 +14,12 @@ export default class RequisitionEdit extends Vue {
     console.log(
       '🚀 ~ file: rqz-edit.vue ~ line 14 ~ RequisitionEdit ~ handleManChange ~ man',
       man
+    )
+  }
+  handleHeroChange(hero: string): void {
+    console.log(
+      '🚀 ~ file: rqz-edit.vue ~ line 14 ~ RequisitionEdit ~ handleheroChange ~ hero',
+      hero
     )
   }
 }
