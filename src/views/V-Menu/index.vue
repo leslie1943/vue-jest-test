@@ -8,7 +8,13 @@
     >
       <!-- menu的显示内容 -->
       <template v-slot:activator="{ on, attrs }">
-        <v-btn color="indigo" dark v-bind="attrs" v-on="on">
+        <v-btn
+          color="indigo"
+          dark
+          v-bind="attrs"
+          v-on="on"
+          @click="onEmitRouteChange"
+        >
           Menu as Popover
         </v-btn>
       </template>
@@ -71,5 +77,9 @@ export default class VMenuIndex extends Vue {
   private message = false
   private hints = false
   private menu = true
+
+  onEmitRouteChange(): void {
+    this.$bus.emit('app-route-change', 'Menu as Popover')
+  }
 }
 </script>

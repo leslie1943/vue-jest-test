@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Component } from 'vue-property-decorator'
+import { Component, Watch } from 'vue-property-decorator'
 import TopMenu from '@/components/common/TopMenu.vue'
 import LayoutMain from '@/layout/LayoutMain.vue'
 import { Action } from 'vuex-class'
@@ -14,10 +14,12 @@ import { Action } from 'vuex-class'
 @Component({ components: { TopMenu, LayoutMain } })
 export default class App extends Vue {
   // dynamic 的 module 可以使用 namespace的形式.
-  @Action('changeBusTimer', { namespace: 'bus' }) changeBusTimer!: () => Promise<void>
+  @Action('changeBusTimer', { namespace: 'bus' })
+  changeBusTimer!: () => Promise<void>
   created(): void {
     this.$bus.on('app-bus-home', this.addAppBus)
     this.$bus.once('app-bus-home', this.addAppBusOnce)
+    this.$bus.on('app-route-change', this.routeChange)
   }
   addAppBus(): void {
     this.changeBusTimer()
@@ -25,6 +27,13 @@ export default class App extends Vue {
   }
   addAppBusOnce(): void {
     this.changeBusTimer()
+  }
+
+  @Watch('$route')
+  routeChange(val: string): void {
+    console.log('🚀 ~ file: App.vue ~ line 33 ~ App ~ route', this.$route)
+    console.log('🚀 ~ file: App.vue ~ line 33 ~ App ~ route', val)
+    window.scrollTo(0, 0)
   }
 }
 </script>
