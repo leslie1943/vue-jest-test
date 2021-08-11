@@ -145,7 +145,7 @@ export default class ListItemIndex extends Vue {
   }
   &::v-deep .v-item-group {
     max-height: 60vh;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
 </style>

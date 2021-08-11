@@ -59,6 +59,14 @@ const routes: Array<RouteConfig> = [
           ),
       },
       {
+        path: '/tree-view',
+        name: 'TreeView',
+        component: () =>
+          import(
+            /* webpackChunkName: "list-item" */ '../views/TreeView/index.vue'
+          ),
+      },
+      {
         path: '/vuex-class',
         name: 'Vuex-Class',
         component: () =>
