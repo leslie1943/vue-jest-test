@@ -35,6 +35,7 @@ export default class UserBar extends Vue {
     { title: 'SnackBar', path: '/snack-bar', icon: 'mdi-cart' },
     { title: 'ListItem', path: '/list-item', icon: 'mdi-cart' },
     { title: 'TreeView', path: '/tree-view', icon: 'mdi-cart' },
+    { title: 'TreeView Detail', path: '/tree-view-detail', icon: 'mdi-cart' },
     { title: 'Quantity', path: '/quantity', icon: 'mdi-charity' },
     { title: 'Vuex-Class', path: '/vuex-class', icon: 'mdi-chart-bar-stacked' },
     { title: 'Loading', path: '/loading', icon: 'mdi-chart-tree' },
