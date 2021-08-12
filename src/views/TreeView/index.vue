@@ -114,6 +114,7 @@ export default class TreeViewHome extends Vue {
   caseSensitive = false
   temp: number[] = []
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   filter(item: any, search: string): any {
     const flag = item.name.toLowerCase().indexOf(search.toLowerCase()) > -1
 
