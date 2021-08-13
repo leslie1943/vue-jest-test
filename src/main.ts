@@ -6,10 +6,12 @@ import VueBus from 'vue-bus'
 import vuetify from './plugins/vuetify'
 import * as ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import Log from './global/log'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueBus)
+Vue.use(Log)
 
 new Vue({
   router,

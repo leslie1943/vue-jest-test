@@ -93,6 +93,11 @@ export default class TreeViewHome extends Vue {
   open = []
   users = []
 
+  created(): void {
+    this.$log('message from $log of prototype in vue')
+    this.$info('message from $info of prototype in vue')
+  }
+
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   async fetchUsers(item: any) {
     await pause(500)
