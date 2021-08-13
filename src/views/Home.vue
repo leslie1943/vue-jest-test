@@ -2,7 +2,9 @@
   <div class="home">
     <h1>JUST DO IT</h1>
     <v-divider class="my-4 info"></v-divider>
-    <v-btn :loading="loading" color="primary" @click="emitBus">emit vue bus to change store state</v-btn>
+    <v-btn :loading="loading" color="primary" @click="emitBus"
+      >emit vue bus to change store state</v-btn
+    >
     <v-divider class="my-4 info"></v-divider>
     <h2>Global bus timer records: {{ busTimerData }}</h2>
     <img
@@ -23,7 +25,10 @@ export default class Home extends Vue {
   @State((state: AppState) => state.bus?.loading) loading!: boolean | undefined
   @State((state: AppState) => state.bus?.busTimerData) busTimerData!: string[]
   created(): void {
-    console.log('🚀 ~ file: Home.vue ~ line 19 ~ Home ~ created ~ created', 'created')
+    console.log(
+      '🚀 ~ file: Home.vue ~ line 19 ~ Home ~ created ~ created',
+      'created'
+    )
     this.$bus.emit('app-bus-home')
   }
 
