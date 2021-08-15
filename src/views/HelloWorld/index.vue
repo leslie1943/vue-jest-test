@@ -2,10 +2,10 @@
   <div class="home">
     <HelloWorld msg="Jest" />
 
-    <div>partial WOW 1 <HelloWorld :msg="partialWOW_1" /></div>
+    <div>partial WOW 1 <HelloWorld :msg="partialPet_1" /></div>
     <div>
       partial WOW 2
-      <HelloWorld :msg="partialWOW_2" />
+      <HelloWorld :msg="partialPet_2" />
     </div>
     <div>full WOW <HelloWorld :msg="fullWOW" /></div>
   </div>
@@ -14,7 +14,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import HelloWorld from '@/components/HelloWorld.vue'
-import { WoW } from '@/types/game.types'
+import { Pet } from '@/types/advanced-partial.types'
 @Component({
   components: {
     HelloWorld,
@@ -45,20 +45,21 @@ export default class HelloWorldIndex extends Vue {
     address: '111',
   }
 
-  partialWOW_1: Partial<WoW> = {
-    career: { name: 'Leslie', nation: 'undead' },
+  partialPet_1: Partial<Pet> = {
+    // cat: { name: 'Tom',  }, // Property 'age' is missing in type '{ name: string; }' but required in type 'Cat'.Vetur(2741)
+    cat: { name: 'Tom', age: 22 },
   }
-  partialWOW_2: Partial<WoW> = {
-    cast: { harm: 'Blizard', level: 22 },
+  partialPet_2: Partial<Pet> = {
+    dog: { weight: 11, height: 20 },
   }
-  fullWOW: Partial<WoW> = {
-    career: { name: 'Leslie', nation: 'undead' },
-    cast: { harm: 'Blizard', level: 22 },
+  fullWOW: Partial<Pet> = {
+    cat: { name: 'Tom', age: 2 },
+    dog: { weight: 11, height: 20 },
   }
 
   mounted(): void {
-    console.log('🚀 ~ file: ~ partialWOW_1', this.partialWOW_1)
-    console.log('🚀 ~ file: ~ partialWOW_2', this.partialWOW_2)
+    console.log('🚀 ~ file: ~ partialPet_1', this.partialPet_1)
+    console.log('🚀 ~ file: ~ partialPet_2', this.partialPet_2)
     console.log('🚀 ~ file: ~ fullWOW', this.fullWOW)
   }
 
