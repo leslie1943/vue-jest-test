@@ -1,4 +1,4 @@
-import fetch from './__utils__/fetch'
+// import fetch from './__utils__/fetch'
 import JestInteraction from '@/views/Jest/components/jest-interaction.vue'
 import { shallowMount, mount } from '@vue/test-utils'
 
@@ -33,13 +33,13 @@ describe('Test jest.fn ', () => {
     expect(Object.prototype.toString.call(mockFn())).toBe('[object Promise]')
   })
 
-  it('5: Test callback value', async () => {
-    const mockFn = jest.fn().mockResolvedValue('Fetch OK')
-    const res = await fetch.fetchPostList(mockFn)
-    // 断言 mockFn be invoked
-    expect(mockFn).toBeCalled()
-    expect(res).toBe('Fetch OK')
-  })
+  // it('5: Test callback value', async () => {
+  //   const mockFn = jest.fn().mockResolvedValue('Fetch OK')
+  //   const res = await fetch.fetchPostList(mockFn)
+  //   // 断言 mockFn be invoked
+  //   expect(mockFn).toBeCalled()
+  //   expect(res).toBe('Fetch OK')
+  // })
 
   it('6: Test for Vue - 1', async () => {
     const wrapper = shallowMount(JestInteraction, {})

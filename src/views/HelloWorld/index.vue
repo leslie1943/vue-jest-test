@@ -15,6 +15,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import HelloWorld from '@/components/HelloWorld.vue'
 import { Pet } from '@/types/advanced-partial.types'
+import { Params } from '@/types/advanced-tagged-union.types'
 @Component({
   components: {
     HelloWorld,
@@ -61,10 +62,44 @@ export default class HelloWorldIndex extends Vue {
     console.log('🚀 ~ file: ~ partialPet_1', this.partialPet_1)
     console.log('🚀 ~ file: ~ partialPet_2', this.partialPet_2)
     console.log('🚀 ~ file: ~ fullWOW', this.fullWOW)
+    this.taggedUnion('foo', 123)
+    this.taggedUnion('foo', '123')
+    // this.taggedUnion('foo', true)
+
+    // taggedUnionMore<"foo">(type: "foo", value: string): void
+    this.taggedUnionMore('foo', '123')
   }
 
   test(): void {
     console.info('Hello aaaaaa test')
+  }
+
+  taggedUnion<TParams extends Params>(
+    type: TParams['type'],
+    value: TParams['value']
+  ): void {
+    console.log(
+      '🚀 ~ file: advanced-tagged-union.types.ts ~ line 17 ~ type',
+      type
+    )
+    console.log(
+      '🚀 ~ file: advanced-tagged-union.types.ts ~ line 17 ~ value',
+      value
+    )
+  }
+
+  taggedUnionMore<TType extends Params['type']>(
+    type: TType,
+    value: Extract<Params, { type: TType }>['value']
+  ): void {
+    console.log(
+      '🚀 ~ file: advanced-tagged-union.types.ts ~ line 17 ~ type',
+      type
+    )
+    console.log(
+      '🚀 ~ file: advanced-tagged-union.types.ts ~ line 17 ~ value',
+      value
+    )
   }
 }
 </script>
