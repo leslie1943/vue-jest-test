@@ -8,7 +8,15 @@ interface BarParams {
   value: number
 }
 
-type Params = FooParams | BarParams
+export type Params = FooParams | BarParams
+
+/**
+    TParams 继承了联合类型 Params,
+    给 type 参数的类型是 TParams['type'],
+    给 value 参数的类型是 TParams['value'],
+    那么在使用这个函数时,
+    自然 type 和 value 就会满足 FooParams 或 BarParams 了
+ */
 
 function toTest<TParams extends Params>(
   type: TParams['type'],
