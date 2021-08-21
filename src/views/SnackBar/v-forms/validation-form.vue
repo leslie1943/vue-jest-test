@@ -9,6 +9,8 @@
         required
       ></v-text-field>
 
+      <form-company />
+
       <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
         Validate
       </v-btn>
@@ -22,7 +24,8 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import { VueFormValidate } from '@/types/form-validate.type'
-@Component({ name: 'ValidationForm' })
+import FormCompany from './subs/form-company.vue'
+@Component({ name: 'ValidationForm', components: { FormCompany } })
 export default class ValidationForm extends Vue {
   valid = true
   name = ''
