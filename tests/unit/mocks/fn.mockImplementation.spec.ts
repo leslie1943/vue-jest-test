@@ -1,3 +1,18 @@
+/**
+ *  ========== mockImplementation 使用场景 ==========
+ *  如果想测试一个 findListByCode 方法,findListByCode 方法中有一些第三方的API, 如
+ *    this.createQueryBuilder().getMany()等方法
+ *  那么就可以在调用 A 方法时
+ *    1. 先 使用spyOn模拟 createQueryBuilder
+ *    2. 在 使用 mockImplementation 来实现 createQueryBuilder 方法的具体实现
+ *    3. 根据 mockImplementation 实现的返回值进行结果的对比
+ *
+ *  格式:
+ *    jest.spyOn(Object, 'functionName').mockImplementation(detailImpToFunction)
+ *
+ *  mockImplementation: 可以在 jest.spyOn 和 jest.fn() 使用
+ */
+
 import { VLeaderRepository } from '../repositories/v-leader.repository'
 describe('Test jet.fn.implementation', () => {
   it('Test Simple', () => {
