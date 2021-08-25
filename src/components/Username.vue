@@ -4,9 +4,7 @@
       {{ information }}
     </div>
     <v-text-field label="Enter your username" v-model="username" />
-    <div v-if="error" class="error">
-      Please enter a username with at least seven letters
-    </div>
+    <div v-if="error" class="error">Please enter a username with at least seven letters</div>
     <div id="fixed" style="color: red">Fixed info</div>
     <div>
       <!-- <v-select :items="items" label="Standard"></v-select> -->
