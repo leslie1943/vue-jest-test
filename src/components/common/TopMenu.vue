@@ -5,11 +5,7 @@
         <v-btn color="primary" dark v-bind="attrs" v-on="on"> PICK MENU </v-btn>
       </template>
       <v-list>
-        <v-list-item
-          v-for="item in items_1"
-          :key="item.path"
-          @click="clickMenu(item)"
-        >
+        <v-list-item v-for="item in items_1" :key="item.path" @click="clickMenu(item)">
           <v-list-item-title>{{ item.name }}</v-list-item-title>
         </v-list-item>
       </v-list>
@@ -20,11 +16,7 @@
         <v-btn color="primary" dark v-bind="attrs" v-on="on"> PICK MENU </v-btn>
       </template>
       <v-list>
-        <v-list-item
-          v-for="item in items_2"
-          :key="item.path"
-          @click="clickMenu(item)"
-        >
+        <v-list-item v-for="item in items_2" :key="item.path" @click="clickMenu(item)">
           <v-list-item-title>{{ item.name }}</v-list-item-title>
         </v-list-item>
       </v-list>
@@ -32,16 +24,10 @@
 
     <v-menu offset-x>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn color="primary" dark v-bind="attrs" v-on="on">
-          Vuex 3 ways</v-btn
-        >
+        <v-btn color="primary" dark v-bind="attrs" v-on="on"> Vuex 3 ways</v-btn>
       </template>
       <v-list>
-        <v-list-item
-          v-for="item in items_store"
-          :key="item.path"
-          @click="clickMenu(item)"
-        >
+        <v-list-item v-for="item in items_store" :key="item.path" @click="clickMenu(item)">
           <v-list-item-title>{{ item.name }}</v-list-item-title>
         </v-list-item>
       </v-list>
