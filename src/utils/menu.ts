@@ -8,7 +8,7 @@ const appMenus = [
   },
   { title: 'Message-List', path: '/message-list', icon: 'mdi-cards-club' },
   { title: 'User-Name', path: '/user-name', icon: 'mdi-cart' },
-  // { title: 'Select UI', path: '/v-select', icon: 'mdi-cart' },
+  { title: 'Select UI', path: '/v-select', icon: 'mdi-cart' },
   { title: 'SnackBar', path: '/snack-bar', icon: 'mdi-cart' },
   { title: 'ListItem', path: '/list-item', icon: 'mdi-cart' },
   { title: 'TreeView', path: '/tree-view', icon: 'mdi-cart' },

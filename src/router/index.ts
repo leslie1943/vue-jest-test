@@ -48,11 +48,11 @@ const routes: Array<RouteConfig> = [
         name: 'ListItem',
         component: () => import(/* webpackChunkName: "list-item" */ '../views/ListItem/index.vue'),
       },
-      // {
-      //   path: '/v-select',
-      //   name: 'v-select',
-      //   component: () => import(/* webpackChunkName: "v-select" */ '../views/V-Select/index.vue'),
-      // },
+      {
+        path: '/v-select',
+        name: 'v-select',
+        component: () => import(/* webpackChunkName: "v-select" */ '../views/V-Select/index.vue'),
+      },
       {
         path: '/tree-view',
         name: 'TreeView',
