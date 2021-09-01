@@ -18,7 +18,9 @@ import { Pet } from '@/types/advanced-readonly.types'
     console.info('Message list beforeRouteLeave >>>>>>>>> to', to)
     console.info('Message list beforeRouteLeave >>>>>>>>> from', from)
     if (to.path !== '/hello-world') {
-      delete from.meta.position
+      if (from && from.meta) {
+        delete from.meta.position
+      }
     }
     next()
   },
@@ -40,10 +42,7 @@ export default class MessageListIndex extends Vue {
         height: 22,
       },
     }
-    console.log(
-      '🚀 ~ file: index.vue ~ line 30 ~ MessageListIndex ~ mounted ~ pet',
-      pet
-    )
+    console.log('🚀 ~ file: index.vue ~ line 30 ~ MessageListIndex ~ mounted ~ pet', pet)
     // pet.cat = { name: 'jerry', age: 10 } // Cannot assign to 'cat' because it is a read-only property
     pet.cat.name = 'Jerry' // you can chagne
   }

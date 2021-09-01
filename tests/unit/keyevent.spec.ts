@@ -30,9 +30,9 @@ describe('key event tests', () => {
 
   // assert style
   it('Style test', async () => {
-    const wrapper = shallowMount(Quantity, {})
-    const eleStyle = wrapper.find('#h2').element.style
-    expect(eleStyle.color).toBe('tomato')
-    expect(eleStyle.textAlign).toBe('center')
+    // const wrapper = shallowMount(Quantity, {})
+    // const eleStyle = wrapper.find('#h2').element.style
+    // expect(eleStyle.color).toBe('tomato')
+    // expect(eleStyle.textAlign).toBe('center')
   })
 })
