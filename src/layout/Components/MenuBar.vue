@@ -16,6 +16,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { SidebarMenu } from '@/types/menu.type'
 import appMenus from '@/utils/menu'
+// 
 @Component({})
 export default class UserBar extends Vue {
   items: SidebarMenu[] = appMenus
