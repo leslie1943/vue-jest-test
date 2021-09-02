@@ -12,5 +12,6 @@ test('Test jest.fn return static values', () => {
 
 /**
  * mockReturnValueOnce 只会执行第一次 Once的结果
- * 忽略 mockReturnValue的结果
+ * 忽略 mockReturnValue 的结果
+ * 这是调用一次的情况,多次调用返回的值不同.
  */
