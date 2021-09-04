@@ -14,8 +14,8 @@ test('async test mockResolvedValue', async () => {
 
 /**
  * 链式调用,
- * 1: mockReturnValueOnce 返回的值依次 pop,
- * 2: 直到没有 mockReturnValueOnce
- * 3: pop mockReturnValue 返回的值
+ * 1: mockResolvedValueOnce 返回的值依次 pop,
+ * 2: 直到没有 mockResolvedValueOnce
+ * 3: pop mockResolvedValue 返回的值
  * 最
  */
