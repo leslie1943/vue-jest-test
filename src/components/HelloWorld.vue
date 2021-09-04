@@ -10,6 +10,12 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 @Component
 export default class HelloWorld extends Vue {
   @Prop({ required: true }) private msg!: string
+
+  name = ''
+
+  setName(newName: string): void {
+    this.name = newName
+  }
 }
 </script>
 
