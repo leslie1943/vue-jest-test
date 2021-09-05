@@ -1,29 +1,27 @@
-import { shallowMount, Wrapper } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import HelloWorld from '@/components/HelloWorld.vue'
 
 describe('test component', () => {
-  let wrapper: Wrapper<HelloWorld>
-  const initName = 'Init Name'
   let conter = 1
-  beforeEach(async () => {
-    wrapper = shallowMount(HelloWorld)
-    await wrapper.setData({ name: initName })
+  afterEach(async () => {
     console.info('conter', conter++)
   })
 
   it('dispatch an getAsync action', async () => {
-    expect(wrapper.vm.$data.name).toBe(initName)
+    const wrapper = shallowMount(HelloWorld, { propsData: { msg: 'init message' } })
+    expect(wrapper.vm.$data.name).toBe('')
     await wrapper.setData({ name: 'changed OK' })
     expect(wrapper.vm.$data.name).toBe('changed OK')
   })
 
   it('dispatch an getAsync action', async () => {
-    expect(wrapper.vm.$data.name).toBe(initName)
+    const wrapper = shallowMount(HelloWorld, { propsData: { msg: 'init message' } })
     ;(wrapper.vm as any).setName('Given Leslie')
     expect(wrapper.vm.$data.name).toBe('Given Leslie')
   })
-
-  it('dispatch an getAsync action', async () => {
-    expect(wrapper.vm.$data.name).toBe(initName)
-  })
 })
+
+/**
+ * afteEach 中, 在每个 具体 test case 中拿不到全局的 wrapper
+ *
+ */
