@@ -48,31 +48,23 @@ describe('Test afterEach/afterAll, beforeEach/beforeAll, ', () => {
 
 /**
  * Output:
-    LifeCycle: beforeAll >> execute before test cases
+    🎉🎉✨LifeCycle: beforeAll >> execute before test cases
 
     LifeCycle: beforeEach >> execute before every test cases
-
-    Test addOne
-
+    🎃 <<<<Test addOne>>>>
     LifeCycle: afterEach >> execute after every test cases
 
     LifeCycle: beforeEach >> execute before every test cases
-
-    Test addTwo
-
+    🎃 <<<<Test addTwo>>>>
     LifeCycle: afterEach >> execute after every test cases
 
     LifeCycle: beforeEach >> execute before every test cases
-
-    Test minusOne
-
+    🎃 <<<<Test minusOne>>>>
     LifeCycle: afterEach >> execute after every test cases
 
     LifeCycle: beforeEach >> execute before every test cases
-
-    Test minusTwo
-
+    🎃 <<<<Test minusTwo>>>>
     LifeCycle: afterEach >> execute after every test cases
 
-    LifeCycle: afterAll >> execute after all test cases
+    🎉🎉✨LifeCycle: afterAll >> execute after all test cases
  */
