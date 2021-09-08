@@ -20,6 +20,7 @@ const appMenus = [
   { title: 'Message', path: '/message', icon: 'mdi-chess-king' },
   { title: 'Depends', path: '/depends', icon: 'mdi-chili-hot' },
   { title: 'About', path: '/about', icon: 'mdi-flask-outline' },
+  { title: 'Mixin', path: '/mixin', icon: 'mdi-flask-outline' },
 
   { title: 'StateChange', path: '/state-change', icon: 'mdi-horse-variant' },
   { title: 'EmitOn', path: '/emit-on', icon: 'mdi-hexagon-multiple' },

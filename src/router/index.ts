@@ -76,6 +76,11 @@ const routes: Array<RouteConfig> = [
           import(/* webpackChunkName: "hello-world" */ '@/views/HelloWorld/index.vue'),
       },
       {
+        path: '/mixin',
+        name: 'mixin',
+        component: () => import(/* webpackChunkName: "mixin" */ '@/views/Mixin/index.vue'),
+      },
+      {
         path: '/message-list',
         name: 'Message-List',
         component: () =>
