@@ -2,19 +2,15 @@
   <div class="main-layout-wrapper">
     <v-app class="app-wrapper">
       <AppSiderbar :visible="showSideBar" />
-      <AppHeader
-        :visible="showSideBar"
-        :layoutStyle="layoutStyle"
-        @toggle="handleToggle"
-      />
+      <AppHeader :visible="showSideBar" :layoutStyle="layoutStyle" @toggle="handleToggle" />
       <AppMain :layoutStyle="layoutStyle" />
-      <AppFooter :layoutStyle="layoutStyle" />
+      <AppFooter ref="footerRef" :layoutStyle="layoutStyle" />
     </v-app>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Provide } from 'vue-property-decorator'
+import { Component, Vue, Provide, Ref } from 'vue-property-decorator'
 import AppSiderbar from './Navigation/app-siderbar.vue'
 import AppHeader from './Navigation/app-header.vue'
 import AppMain from './Navigation/app-main.vue'
@@ -27,6 +23,9 @@ import { LayoutStyleType } from '@/types/layout.type'
 export default class Layout extends Vue {
   @Provide() headerMsg = ''
   @Provide() headerColor = 'purple'
+
+  @Ref('footerRef')
+  footerRef!: Vue
   showSideBar = false
 
   handleToggle(): void {
@@ -35,6 +34,14 @@ export default class Layout extends Vue {
 
   get layoutStyle(): LayoutStyleType {
     return { marginLeft: this.showSideBar ? '256px' : '0px' }
+  }
+
+  getRefData(): void {
+    console.info('get from ref:', (this.$refs.footerRef as any).headerColor)
+  }
+
+  mounted(): void {
+    this.getRefData()
   }
 }
 </script>
