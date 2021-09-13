@@ -19,6 +19,9 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import { simulateSettled } from '@/promise/allSettled'
+const result = simulateSettled()
+console.log('🚀 ~ file: index.vue ~ line 28 ~ result', result)
 @Component({})
 export default class ListItemIndex extends Vue {
   items = [
