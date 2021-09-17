@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Vuex, { Store } from 'vuex'
-
 import PersonModule from './modules/person'
 import StudentModule from './modules/student'
 import PassengerModule from './modules/passenger'
+import UserModule from './modules/user'
 import GlobalBusModule from './modules/gobal-bus'
 Vue.use(Vuex)
 
@@ -15,6 +15,7 @@ export type AppState = {
   passenger?: PassengerModule
   bus?: GlobalBusModule
   topLoading: boolean
+  user?: UserModule
 }
 
 export const createStore = (options: {
@@ -23,10 +24,12 @@ export const createStore = (options: {
 }): Store<AppState> => {
   console.info(options)
   const store = new Vuex.Store({
+    getters: {},
     modules: {
       person: PersonModule,
       student: StudentModule,
       bus: GlobalBusModule,
+      user: UserModule,
     },
     mutations: {
       setToken(state: AppState, token: string) {

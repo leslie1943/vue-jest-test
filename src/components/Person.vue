@@ -1,10 +1,7 @@
 <template>
   <div class="hello">
     <div style="margin: 20px 0">
-      <strong
-        >THIS PAGE DEMOSTRATE FOR `VUEX-CLASS` AND
-        `VUEX-MODULE-DECORATORS`</strong
-      >
+      <strong>THIS PAGE DEMOSTRATE FOR `VUEX-CLASS` AND `VUEX-MODULE-DECORATORS`</strong>
     </div>
     <v-card class="mx-auto" max-width="1344">
       <v-card-text>
@@ -17,12 +14,7 @@
         </div>
       </v-card-text>
       <v-card-actions>
-        <v-btn
-          text
-          color="teal accent-4"
-          :loading="pageDataLoading"
-          @click="getMan"
-        >
+        <v-btn text color="teal accent-4" :loading="pageDataLoading" @click="getMan">
           Get man Data
         </v-btn>
       </v-card-actions>
@@ -52,6 +44,7 @@ import { Action, State } from 'vuex-class'
 import { AppState } from '@/store'
 import { MODULE_NAMES } from '@/store/modules/common/enum_modules'
 import { Man } from '@/store/modules/person'
+import User from '@/store/modules/user'
 
 const namespace = MODULE_NAMES.PERSON
 
@@ -63,15 +56,16 @@ export default class Person extends Vue {
   @Action('getPerson', { namespace }) getMan!: () => Promise<void>
 
   // state是全局的 state, 可以调用到各个模块下的 state
-  @State((state: AppState) => state.person?.loading) pageDataLoading:
-    | boolean
-    | undefined
+  @State((state: AppState) => state.person?.loading) pageDataLoading: boolean | undefined
 
   @State((state: AppState) => state.person?.man) pageDataMan: Man | undefined
   @State((state: AppState) => state.errors) errors: any
+  @State((state: AppState) => state.user) user?: User
 
   handleGetMan = async (): Promise<void> => {
     await this.getMan()
+
+    console.info('this.user?.userInfo', this.user?.userInfo)
   }
 }
 </script>
