@@ -12,6 +12,13 @@ export default class Students extends BaseLoader {
   // 💛 STATE: should be public for accessiable
   public list: StudentProp[] = []
 
+  get currentTime() {
+    const year = new Date().getFullYear()
+    const month = new Date().getMonth()
+    const day = new Date().getDay()
+    return year + '/' + month + '/' + day
+  }
+
   // 💛 Mutation
   @Mutation
   UPDATELIST(user: StudentProp): void {
