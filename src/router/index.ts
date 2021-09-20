@@ -26,6 +26,12 @@ const routes: Array<RouteConfig> = [
           import(/* webpackChunkName: "requisition" */ '../views/Requisition/index.vue'),
       },
       {
+        path: '/global-user',
+        name: 'Global User',
+        component: () =>
+          import(/* webpackChunkName: "global user" */ '../views/GlobalUser/index.vue'),
+      },
+      {
         path: '/home',
         name: 'Home',
 

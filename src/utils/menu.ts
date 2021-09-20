@@ -1,4 +1,5 @@
 const appMenus = [
+  { title: 'Global User', path: '/global-user', icon: 'mdi-home-city' },
   { title: 'Requisition', path: '/requisition', icon: 'mdi-home-city' },
   { title: 'Home', path: '/', icon: 'mdi-home-city' },
   {
