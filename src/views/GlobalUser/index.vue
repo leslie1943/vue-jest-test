@@ -3,8 +3,10 @@
     <v-data-table
       :headers="headers"
       :items="userList"
-      :items-per-page="5"
+      :items-per-page="50"
       class="elevation-1"
+      :fixed-header="true"
+      height="80vh"
     ></v-data-table>
   </div>
 </template>
@@ -20,11 +22,7 @@ export default class GlobalUserIndex extends Vue {
   loading = false
   userItems: UserType[] = []
   headers = [
-    {
-      text: 'Name',
-      align: 'start',
-      value: 'name',
-    },
+    { text: 'Name', align: 'start', value: 'name' },
     { text: 'CorpId', value: 'corpId' },
     { text: 'Employee Id', value: 'employeeId' },
   ]

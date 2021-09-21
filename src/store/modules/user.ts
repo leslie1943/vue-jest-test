@@ -20,7 +20,7 @@ export default class User extends VuexModule {
   @Action
   async getUserList(): Promise<void> {
     const data = await getUsers()
-    this.context.commit('updateUserList', Object.freeze(data))
     // this.context.commit('updateUserList', data)
+    this.context.commit('updateUserList', Object.freeze(data))
   }
 }
