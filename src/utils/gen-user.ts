@@ -60,7 +60,7 @@ export function getUsers(): Promise<UserType[]> {
     'Y',
     'Z',
   ]
-  for (let i = 0; i < 70000; i++) {
+  for (let i = 0; i < 700000; i++) {
     userList.push({
       corpId: 'A' + Math.floor(Math.random() * 7000),
       name:
@@ -108,8 +108,8 @@ export function getUsers(): Promise<UserType[]> {
   }
 
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(userList)
-    }, 2000)
+    // setTimeout(() => {
+    resolve(userList)
+    // }, 2000)
   })
 }
