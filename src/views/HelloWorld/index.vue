@@ -48,6 +48,10 @@ export default class HelloWorldIndex extends Vue {
     address: '111',
   }
 
+  home = ''
+  prefix = ''
+  suffix = ''
+
   partialPet_1: Partial<Pet> = {
     // cat: { name: 'Tom',  }, // Property 'age' is missing in type '{ name: string; }' but required in type 'Cat'.Vetur(2741)
     cat: { name: 'Tom', age: 22 },
@@ -87,6 +91,14 @@ export default class HelloWorldIndex extends Vue {
   ): void {
     console.log('🚀 ~ file: advanced-tagged-union.types.ts ~ line 17 ~ type', type)
     console.log('🚀 ~ file: advanced-tagged-union.types.ts ~ line 17 ~ value', value)
+  }
+
+  get pageInfo() {
+    return {
+      home: this.home,
+      suffix: this.suffix,
+      prefix: this.prefix,
+    }
   }
 }
 </script>
