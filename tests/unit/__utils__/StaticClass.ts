@@ -18,18 +18,19 @@ export default class StaticClass {
     return true
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   private static fnA(a: string, b: number): boolean {
     return true
   }
-
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   private static fnB(a: string, b: number): boolean {
     return false
   }
-
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   private static fnC(a: string, b: number): boolean {
     return true
   }
-
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   private static fnD(a: string): boolean {
     return false
   }
