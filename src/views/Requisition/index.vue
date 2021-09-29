@@ -19,6 +19,8 @@ import RqzDialog from './components/rqz-dialog.vue'
 import RqzEdit from './components/rqz-edit.vue'
 import RqzType from './components/rqz-type.vue'
 import RqzBtn from './components/rqz-btn.vue'
+
+import { IDBSetEntity, IDBSetAssocaites } from '@/idb'
 @Component({ components: { RqzDialog, RqzType, RqzEdit, RqzBtn } })
 export default class RequisitionHome extends Vue {
   show = false
@@ -31,6 +33,11 @@ export default class RequisitionHome extends Vue {
 
   handleOutClick(): void {
     console.info('rqz-dialog ')
+  }
+
+  async created() {
+    await IDBSetEntity()
+    await IDBSetAssocaites()
   }
 }
 </script>

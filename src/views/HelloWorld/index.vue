@@ -16,6 +16,8 @@ import { Component, Vue } from 'vue-property-decorator'
 import HelloWorld from '@/components/HelloWorld.vue'
 import { Pet } from '@/types/advanced-partial.types'
 import { Params } from '@/types/advanced-tagged-union.types'
+import { IDBGetAssocaites, IDBGetEntity } from '@/idb'
+
 @Component({
   components: {
     HelloWorld,
@@ -64,7 +66,7 @@ export default class HelloWorldIndex extends Vue {
     dog: { weight: 11, height: 20 },
   }
 
-  mounted(): void {
+  async mounted(): Promise<void> {
     console.log('🚀 ~ file: ~ partialPet_1', this.partialPet_1)
     console.log('🚀 ~ file: ~ partialPet_2', this.partialPet_2)
     console.log('🚀 ~ file: ~ fullWOW', this.fullWOW)
@@ -74,6 +76,10 @@ export default class HelloWorldIndex extends Vue {
 
     // taggedUnionMore<"foo">(type: "foo", value: string): void
     this.taggedUnionMore('foo', '123')
+    const data1 = await IDBGetAssocaites()
+    console.log('🚀 ~ file: index.vue ~ line 80 ~ HelloWorldIndex ~ mounted ~ data', data1)
+    const data2 = await IDBGetEntity()
+    console.log('🚀 ~ file: index.vue ~ line 80 ~ HelloWorldIndex ~ mounted ~ data', data2)
   }
 
   test(): void {
