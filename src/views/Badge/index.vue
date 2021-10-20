@@ -27,16 +27,24 @@ export default class BadgeIndex extends Vue {
     { name: 'leslie', age: 12 },
     { name: 'mark', age: 12 },
   ]
+  destroyData = 'Nothing'
   async mounted(): Promise<void> {
     // const data = await getCats()
     // console.info('data,data', data)
     this.persons.push({ name: 'dora', age: 12 })
+    this.destroyData = 'Mounted'
   }
 
   @Watch('persons')
   watchPerson(vals: Person[]) {
     console.info('watching.')
     console.info('watching.vals', vals)
+  }
+
+  async beforeDestroy(): Promise<void> {
+    await getCats()
+    // console.log('🚀 ~ file: index.vue ~ line 46 ~ BadgeIndex ~ beforeDestroy ~ data', data)
+    this.destroyData = 'Destroying'
   }
 }
 </script>
