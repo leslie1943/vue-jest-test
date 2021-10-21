@@ -1,9 +1,11 @@
 <template>
   <div style="margin: 20px">
+    <div class="out-container" v-outside-event="onOutsideClick">click out of me</div>
     <NormalBadge />
     <NotificationBadge />
     <VisibilityBadge />
     <TabsBadge />
+    <EventPointer />
   </div>
 </template>
 
@@ -13,14 +15,18 @@ import NormalBadge from '@/components/Badge/Normal.vue'
 import NotificationBadge from '@/components/Badge/Notification.vue'
 import VisibilityBadge from '@/components/Badge/Visibility.vue'
 import TabsBadge from '@/components/Badge/Tabs.vue'
+import EventPointer from '@/components/Badge/Event-Pointer.vue'
 import { getCats } from '@/api/cats'
+
+import outsideEvent from '@/directives/outside-event.directive'
 
 type Person = {
   name: string
   age: number
 }
 @Component({
-  components: { NormalBadge, NotificationBadge, VisibilityBadge, TabsBadge },
+  components: { NormalBadge, NotificationBadge, VisibilityBadge, TabsBadge, EventPointer },
+  directives: { outsideEvent },
 })
 export default class BadgeIndex extends Vue {
   persons: Person[] = [
@@ -46,8 +52,17 @@ export default class BadgeIndex extends Vue {
     // console.log('🚀 ~ file: index.vue ~ line 46 ~ BadgeIndex ~ beforeDestroy ~ data', data)
     this.destroyData = 'Destroying'
   }
+
+  onOutsideClick(): void {
+    console.info('click out')
+  }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.out-container {
+  min-height: 300px;
+  width: 50%;
+  background: wheat;
+}
 </style>
