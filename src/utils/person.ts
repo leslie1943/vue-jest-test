@@ -41,3 +41,10 @@ export const getPassenger = (
     }, 2000)
   })
 }
+
+export default {
+  getPerson,
+  getPassenger,
+  getUser,
+  getStudent,
+}
