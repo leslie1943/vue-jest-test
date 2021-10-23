@@ -5,3 +5,9 @@ export async function getCats(): Promise<any> {
     method: 'GET',
   })
 }
+
+export async function getItems(): Promise<any> {}
+
+export default {
+  getCats,
+}
