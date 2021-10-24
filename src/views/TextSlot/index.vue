@@ -14,7 +14,7 @@
 <script lang="ts">
 import IconSuffix from './components/icon-suffix.vue'
 import { Vue, Component } from 'vue-property-decorator'
-import { Debounce, Bind } from 'lodash-decorators'
+import { Debounce } from 'lodash-decorators'
 import personService from '@/utils/person'
 
 type PersonItem = {
@@ -37,7 +37,7 @@ export default class TextSlotIndex extends Vue {
     { id: 3, name: 'mark' },
   ]
 
-  @Bind()
+  // @Bind()
   @Debounce(500)
   validateName(): void {
     this.hasBeenUsed = null
@@ -48,13 +48,12 @@ export default class TextSlotIndex extends Vue {
     }
   }
 
-  async getPeopleDataWithoutDebounce() {
+  async getDataNormal() {
     const data = await personService.getPerson()
     this.people = data
   }
-
   @Debounce(500)
-  async getPeopleDataWithDebounce() {
+  async getDataDebounced() {
     const data = await personService.getPerson()
     this.people = data
   }

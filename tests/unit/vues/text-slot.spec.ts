@@ -1,45 +1,48 @@
 import TextSlot from '@/views/TextSlot/index.vue'
-import { mount } from '@vue/test-utils'
+import { mount, Wrapper } from '@vue/test-utils'
 import personAPI from '@/utils/person'
-// import { timeout } from '../__utils__/timer.out'
-import * as sinon from 'sinon'
 
-import _ from 'lodash'
+/**
+ * ⭐⭐⭐ Important Point ⭐⭐⭐
+ * do not verify method 'getDataDebounced' whether be debounced or not,
+ * because debounced is a method of third party module, we are sure of that is correct.
+ * so just verify method 'getDataDebounced' can be invoked correct together with its internal api.
+ */
+jest.mock('lodash/debounce', () => jest.fn((fn) => fn))
+
 describe('Test debounce', () => {
-  it('Test debounce function getPeopleData Without Debounce', async () => {
+  it('Mounted', () => {
+    const wrapper = mount(TextSlot)
+    expect(wrapper.html()).toBeTruthy()
+  })
+
+  it('Mounted', async () => {
+    const wrapper = mount(TextSlot)
+    wrapper.setData({ baseInfo: { name: 'leslie' } })
+    wrapper.setData({ persons: [{ name: 'leslie' }] })
+    await (wrapper.vm as any).validateName()
+    expect(wrapper.vm.$data.hasBeenUsed).toBe(true)
+  })
+
+  // Test normal method
+  it('Test normal method', async () => {
     const wrapper = mount(TextSlot)
     const vm = wrapper.vm
-    const mockGet = jest.spyOn(personAPI, 'getPerson').mockResolvedValueOnce({ name: 'v', age: 1 })
-    await (wrapper.vm as any).getPeopleDataWithoutDebounce()
+    const mockGet = jest.spyOn(personAPI, 'getPerson').mockResolvedValue({ name: 'v', age: 1 })
+    await (wrapper.vm as any).getDataNormal()
     expect(mockGet).toBeCalled()
     expect(vm.$data.people).toEqual({ name: 'v', age: 1 })
   })
 
-  it('Test debounce function getPeopleData with Debounce without nextTick', async () => {
-    const wrapper = mount(TextSlot)
-
+  // Test debounced method
+  it('Test debounced method Debounce', async () => {
+    const wrapper: Wrapper<TextSlot> = mount(TextSlot)
+    const vm = wrapper.vm
     const mockGet = jest
       .spyOn(personAPI, 'getPerson')
-      .mockResolvedValue({ name: 'leslie1944', age: 1944 })
-
-    jest.mock('lodash/debounce', () => jest.fn((fn) => fn))
-
-    await (wrapper.vm as any).getPeopleDataWithDebounce()
+      .mockResolvedValue({ name: 'leslie1944', age: 20211 })
+    await (vm as any).getDataDebounced()
     expect(mockGet).toBeCalled()
-    // expect(wrapper.vm.$data.people).toEqual({ name: 'leslie1944', age: 1944 })
+    expect(wrapper.vm.$data.people).toEqual({ name: 'leslie1944', age: 20211 })
   })
-
-  //   it('Test debounce function getPeopleData with Debounce with nextTick', async () => {
-  //     const wrapper = mount(TextSlot)
-  //     const vm = wrapper.vm
-  //     const mockGet = jest
-  //       .spyOn(personAPI, 'getPerson')
-  //       .mockResolvedValueOnce({ name: 'leslie1943', age: 1943 })
-  //     await (wrapper.vm as any).getPeopleDataWithDebounce()
-  //     expect(mockGet).toBeCalled()
-  //     await wrapper.vm.$nextTick()
-  //     timeout(400, () => {
-  //       expect(vm.$data.people).toEqual({ name: 'v2', age: 1 })
-  //     })
-  //   })
 })
