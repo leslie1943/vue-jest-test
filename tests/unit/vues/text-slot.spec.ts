@@ -16,13 +16,13 @@ describe('Test debounce', () => {
     expect(wrapper.html()).toBeTruthy()
   })
 
-  it('Mounted', async () => {
-    const wrapper = mount(TextSlot)
-    wrapper.setData({ baseInfo: { name: 'leslie' } })
-    wrapper.setData({ persons: [{ name: 'leslie' }] })
-    await (wrapper.vm as any).validateName()
-    expect(wrapper.vm.$data.hasBeenUsed).toBe(true)
-  })
+  // it('Mounted', async () => {
+  //   const wrapper = mount(TextSlot)
+  //   wrapper.setData({ baseInfo: { name: 'leslie' } })
+  //   wrapper.setData({ persons: [{ name: 'leslie' }] })
+  //   await (wrapper.vm as any).validateName()
+  //   expect(wrapper.vm.$data.hasBeenUsed).toBe(true)
+  // })
 
   // Test normal method
   it('Test normal method', async () => {
