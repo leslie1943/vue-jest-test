@@ -10,6 +10,7 @@ describe('Route.vue', () => {
   beforeEach(() => {
     $route = {
       query: {},
+      path: 'http://github.com',
     }
     $router = {
       replace: jest.fn(),
@@ -28,6 +29,16 @@ describe('Route.vue', () => {
       stubs: ['router-link'],
     })
     expect($router.replace).toHaveBeenCalled()
+  })
+  it('inject global attributes to Vue instance', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const wrapper = shallowMount(RouterTest, {
+      mocks: {
+        $router,
+        $route,
+      },
+    })
+    expect(wrapper.vm.$route.path).toBe('http://github.com')
   })
 
   // 传递 参数
