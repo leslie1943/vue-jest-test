@@ -13,6 +13,7 @@ import { Action } from 'vuex-class'
 
 @Component({ components: { TopMenu, LayoutMain } })
 export default class App extends Vue {
+  appName = ''
   // dynamic 的 module 可以使用 namespace的形式.
   @Action('changeBusTimer', { namespace: 'bus' })
   changeBusTimer!: () => Promise<void>
@@ -20,6 +21,7 @@ export default class App extends Vue {
     this.$bus.on('app-bus-home', this.addAppBus)
     this.$bus.once('app-bus-home', this.addAppBusOnce)
     this.$bus.on('app-route-change', this.routeChange)
+    this.appName = this.$runtimeConfig.VUE_APP_NAME
   }
   addAppBus(): void {
     this.changeBusTimer()
