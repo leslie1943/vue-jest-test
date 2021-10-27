@@ -13,6 +13,10 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueBus)
 Vue.use(Log)
+Vue.prototype.$runtimeConfig = {
+  VUE_APP_NAME: 'Leslie',
+  VUE_APP_VERSION: 1,
+}
 
 new Vue({
   router,
