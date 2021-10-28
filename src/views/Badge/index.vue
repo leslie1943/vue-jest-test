@@ -6,6 +6,7 @@
     <VisibilityBadge />
     <TabsBadge />
     <EventPointer />
+    <div data-name="leslie su" data-age="22"></div>
   </div>
 </template>
 
@@ -29,6 +30,11 @@ type Person = {
   directives: { outsideEvent },
 })
 export default class BadgeIndex extends Vue {
+  datasetName = ''
+  created() {
+    this.datasetName = document.getElementById('user')?.dataset?.name as string
+  }
+
   persons: Person[] = [
     { name: 'leslie', age: 12 },
     { name: 'mark', age: 12 },
