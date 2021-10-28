@@ -6,7 +6,7 @@
     <VisibilityBadge />
     <TabsBadge />
     <EventPointer />
-    <div data-name="leslie su" data-age="22"></div>
+    <div id="user" data-name="leslie su" data-age="22"></div>
   </div>
 </template>
 
@@ -31,9 +31,6 @@ type Person = {
 })
 export default class BadgeIndex extends Vue {
   datasetName = ''
-  created() {
-    this.datasetName = document.getElementById('user')?.dataset?.name as string
-  }
 
   persons: Person[] = [
     { name: 'leslie', age: 12 },
@@ -41,6 +38,7 @@ export default class BadgeIndex extends Vue {
   ]
   destroyData = 'Nothing'
   async mounted(): Promise<void> {
+    this.datasetName = document.getElementById('user')?.dataset?.name as string
     // const data = await getCats()
     // console.info('data,data', data)
     this.persons.push({ name: 'dora', age: 12 })
