@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://localhost:8080",
+  "defaultCommandTimeout": 10000,
+  "integrationFolder": "tests/e2e/specs",
+  "fixturesFolder": "tests/e2e/fixtures",
+  "supportFile": "tests/e2e/support/index.ts",
+  "pluginsFile": "tests/e2e/plugins/index.ts",
+  "screenshotOnRunFailure": true,
+  "retries": 1,
+  "nodeVersion": "system"
+}
