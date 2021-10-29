@@ -1,0 +1,5 @@
+// import '@cypress/code-coverage/middleware'
+// import 'cypress-mochawesome-reporter/register'
+// import 'cypress-multi-reporters'
+import '@cypress/vue/dist/support'
+import './commands'

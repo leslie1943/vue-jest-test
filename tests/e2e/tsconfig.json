@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+     "lib": ["esnext", "dom"],
+    "types": ["cypress"] // can use cy in spec files
+  },
+  "include": ["**/*.ts", "plugins/index.ts", "support/index.ts"]
+}
