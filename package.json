@@ -10,6 +10,7 @@
     "test": "npm run test:unit",
     "test:unit:ci": "jest --coverage --ci",
     "test:e2e:watch": "cypress open --config-file ./tests/e2e/cypress.json",
+    "e2e": "npm run test:e2e:watch",
     "lint": "vue-cli-service lint",
     "dev": "vue-cli-service serve"
   },
