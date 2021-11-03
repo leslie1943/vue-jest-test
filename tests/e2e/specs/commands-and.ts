@@ -1,5 +1,5 @@
 describe('commands-and', () => {
-  it('command and test', () => {
+  it('command and test: to page', () => {
     cy.visit('/#/cypress-command-and')
     cy.wait(1000)
   })
