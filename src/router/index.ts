@@ -34,6 +34,14 @@ const routes: Array<RouteConfig> = [
           ),
       },
       {
+        path: '/cypress-command-as',
+        name: 'cypress-command-as',
+        component: () =>
+          import(
+            /* webpackChunkName: "cypress-command-as" */ '../views/Cypress/command/api-as.vue'
+          ),
+      },
+      {
         path: '/global-user',
         name: 'Global User',
         component: () =>
