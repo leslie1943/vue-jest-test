@@ -26,8 +26,8 @@ describe('My First Test', () => {
   })
 
   it('Test expect', () => {
-    expect({ name: 'leslie' }).to.deep.equal({ name: 'leslie' })
+    // expect({ name: 'leslie' }).to.deep.equal({ name: 'leslie' })
     // expect({ name: 'leslie' }).equal({ name: 'leslie' })
-    expect('leslie').equal('leslie')
+    // expect('leslie').equal('leslie')
   })
 })
