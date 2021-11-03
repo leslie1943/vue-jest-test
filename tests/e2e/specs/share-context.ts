@@ -14,7 +14,8 @@ describe('Share context', () => {
   })
 
   it('Visits the app root url', () => {
-    expect(text).to.include('emit')
+    // expect(text).to.include('emit')
+    cy.get('.home > .v-btn > .v-btn__content').should('contain.text', text)
   })
 
   // it('intercept api to return response', () => {
