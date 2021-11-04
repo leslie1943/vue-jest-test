@@ -20,4 +20,11 @@ describe('commands-and', () => {
     cy.get('@firstChip').should('be.visible').should('have.text', 'TypeScript chip') // SHOULD_API: have.text
     cy.get('@lastChip').should('be.visible').should('have.text', 'NestJS chip') // SHOULD_API: have.text
   })
+
+  // TODO:
+  // it('test api', () => {
+  //   const url = `https://d7.weather.com.cn/fishing/api/v1/tab?stationId=101070201`
+  //   cy.intercept('GET', url).as('getWeather')
+  //   cy.wait(1000)
+  // })
 })
