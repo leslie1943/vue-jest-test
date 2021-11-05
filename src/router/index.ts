@@ -42,6 +42,14 @@ const routes: Array<RouteConfig> = [
           ),
       },
       {
+        path: '/cypress-command-blur',
+        name: 'cypress-command-blur',
+        component: () =>
+          import(
+            /* webpackChunkName: "cypress-command-blur" */ '../views/Cypress/command/api-blur.vue'
+          ),
+      },
+      {
         path: '/global-user',
         name: 'Global User',
         component: () =>

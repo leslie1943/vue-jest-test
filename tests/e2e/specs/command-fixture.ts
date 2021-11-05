@@ -1,4 +1,5 @@
 import usersInJson from '../fixtures/admin-users.json'
+import { expect } from 'chai'
 describe('commands-fixture', () => {
   it('command as test: to page', () => {
     cy.visit('/#/cypress-command-as')
