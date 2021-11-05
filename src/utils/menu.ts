@@ -4,6 +4,7 @@ const appMenus = [
   { title: 'Home', path: '/', icon: 'mdi-home-city' },
   { title: 'Cypress command and', path: '/cypress-command-and', icon: 'mdi-home-city' },
   { title: 'Cypress command as', path: '/cypress-command-as', icon: 'mdi-home-city' },
+  { title: 'Cypress command blur', path: '/cypress-command-blur', icon: 'mdi-home-city' },
   {
     title: 'Hello-World',
     path: '/hello-world',
