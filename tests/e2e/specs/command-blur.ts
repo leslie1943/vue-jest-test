@@ -4,7 +4,7 @@
  * If you want to ensure an element is focused before blurring, try using .focus() before .blur().
  */
 
-import { expect } from 'chai'
+// import { expect } from 'chai'
 describe('commands-blur', () => {
   it('command as test: to page', () => {
     cy.visit('/#/cypress-command-blur')
