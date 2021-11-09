@@ -6,6 +6,7 @@ const appMenus = [
   { title: 'Cypress command as', path: '/cypress-command-as', icon: 'mdi-home-city' },
   { title: 'Cypress command blur', path: '/cypress-command-blur', icon: 'mdi-home-city' },
   { title: 'Cypress command check', path: '/cypress-command-check', icon: 'mdi-home-city' },
+  { title: 'Cypress command children', path: '/cypress-command-children', icon: 'mdi-home-city' },
   {
     title: 'Hello-World',
     path: '/hello-world',

@@ -30,4 +30,12 @@ export const cypressRouter: RouterNormal[] = [
         /* webpackChunkName: "cypress-command-check" */ '@/views/Cypress/command/api-check.vue'
       ),
   },
+  {
+    path: '/cypress-command-children',
+    name: 'cypress-command-children',
+    component: () =>
+      import(
+        /* webpackChunkName: "cypress-command-children" */ '@/views/Cypress/command/api-children.vue'
+      ),
+  },
 ]
