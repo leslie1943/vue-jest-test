@@ -38,4 +38,12 @@ export const cypressRouter: RouterNormal[] = [
         /* webpackChunkName: "cypress-command-children" */ '@/views/Cypress/command/api-children.vue'
       ),
   },
+  {
+    path: '/cypress-command-clear',
+    name: 'cypress-command-clear',
+    component: () =>
+      import(
+        /* webpackChunkName: "cypress-command-clear" */ '@/views/Cypress/command/api-clear.vue'
+      ),
+  },
 ]
