@@ -46,4 +46,12 @@ export const cypressRouter: RouterNormal[] = [
         /* webpackChunkName: "cypress-command-clear" */ '@/views/Cypress/command/api-clear.vue'
       ),
   },
+  {
+    path: '/cypress-command-clear-cookie',
+    name: 'cypress-command-clear-cookie',
+    component: () =>
+      import(
+        /* webpackChunkName: "cypress-command-clear-cookie" */ '@/views/Cypress/command/api-clear-cookie.vue'
+      ),
+  },
 ]
