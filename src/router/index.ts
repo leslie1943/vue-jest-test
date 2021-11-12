@@ -6,6 +6,7 @@ import TOP_LOADING from '@/plugins/util-top-loading'
 import { cypressRouter } from './cypress.router'
 import { vuetifyRouter } from './vuetify.router'
 import { practiceRouter } from './parctice.router'
+import { es6Router } from './es6.router'
 
 Vue.use(VueRouter)
 
@@ -41,6 +42,7 @@ const routes: Array<RouteConfig> = [
       ...cypressRouter,
       ...vuetifyRouter,
       ...practiceRouter,
+      ...es6Router,
     ],
   },
   {
