@@ -8,7 +8,12 @@ const appMenus = [
   { title: 'Cypress command check', path: '/cypress-command-check', icon: 'mdi-home-city' },
   { title: 'Cypress command children', path: '/cypress-command-children', icon: 'mdi-home-city' },
   { title: 'Cypress command clear', path: '/cypress-command-clear', icon: 'mdi-home-city' },
-  { title: 'Cypress command clear', path: '/cypress-command-clear-cookie', icon: 'mdi-home-city' },
+  {
+    title: 'Cypress command clear cookie',
+    path: '/cypress-command-clear-cookie',
+    icon: 'mdi-home-city',
+  },
+  { title: 'ES6-Map', path: '/es6-map', icon: 'mdi-home-city' },
   {
     title: 'Hello-World',
     path: '/hello-world',
