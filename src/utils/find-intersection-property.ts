@@ -23,7 +23,9 @@ const people: Person[] = [
 
 const findInterSectionProperty = (data: Person[]) => {
   const commonProperties: string[] = []
-  const allRawKeys: Array<string>[] = []
+  // const allRawKeys: Array<string>[] = []
+  // 字符类型的二维数组类型
+  const allRawKeys: Array<Array<string>> = []
 
   data.forEach((item) => allRawKeys.push(Object.keys(item)))
   const flattenUniqueKeys = [...new Set(allRawKeys.flat())]

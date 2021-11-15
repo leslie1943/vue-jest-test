@@ -9,6 +9,11 @@ const appMenus = [
   { title: 'Cypress command children', path: '/cypress-command-children', icon: 'mdi-home-city' },
   { title: 'Cypress command clear', path: '/cypress-command-clear', icon: 'mdi-home-city' },
   {
+    title: 'Cypress command clearLocalStorage',
+    path: '/cypress-command-clearLocalStorage',
+    icon: 'mdi-home-city',
+  },
+  {
     title: 'Cypress command clear cookie',
     path: '/cypress-command-clear-cookie',
     icon: 'mdi-home-city',

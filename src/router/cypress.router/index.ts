@@ -54,4 +54,12 @@ export const cypressRouter: RouterNormal[] = [
         /* webpackChunkName: "cypress-command-clear-cookie" */ '@/views/Cypress/command/api-clear-cookie.vue'
       ),
   },
+  {
+    path: '/cypress-command-clearLocalStorage',
+    name: 'cypress-command-clearLocalStorage',
+    component: () =>
+      import(
+        /* webpackChunkName: "cypress-command-clearLocalStorage" */ '@/views/Cypress/command/api-clear-localstorage.vue'
+      ),
+  },
 ]
