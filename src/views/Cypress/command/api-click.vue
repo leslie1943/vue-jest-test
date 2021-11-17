@@ -9,6 +9,18 @@
         <a href="https://www.baidu.com" target="_blank">BaiDu</a>
       </nav>
     </div>
+
+    <v-row>
+      <v-col v-for="i in 3" :key="i" :cols="4">
+        <v-img
+          @click="imageClick(i)"
+          lazy-src="https://picsum.photos/id/11/10/6"
+          max-height="150"
+          max-width="250"
+          src="https://picsum.photos/id/11/500/300"
+        ></v-img>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -25,6 +37,10 @@ export default class CypressCommandClick extends Vue {
 
   minus(): void {
     this.counter--
+  }
+
+  imageClick(id: number) {
+    console.info('image', id)
   }
 }
 </script>

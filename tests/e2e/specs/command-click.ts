@@ -22,7 +22,11 @@ describe('commands-click', () => {
     cy.wait(1000)
   })
 
+  it('command: multiple click', () => {
+    cy.get('.v-image').click({ multiple: true })
+  })
+
   it('command click: click <a>', () => {
-    cy.get('nav > a').click()
+    cy.get('nav > a').click({ ctrlKey: true })
   })
 })
