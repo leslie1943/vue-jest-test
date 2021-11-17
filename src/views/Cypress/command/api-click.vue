@@ -3,6 +3,12 @@
     <v-btn id="btn_add" @click="add">Add</v-btn>
     <v-btn id="btn_minus" @click="minus">Minus</v-btn>
     <div class="counter">{{ counter }}</div>
+
+    <div>
+      <nav>
+        <a href="https://www.baidu.com" target="_blank">BaiDu</a>
+      </nav>
+    </div>
   </div>
 </template>
 
