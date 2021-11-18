@@ -70,4 +70,12 @@ export const cypressRouter: RouterNormal[] = [
         /* webpackChunkName: "cypress-command-click" */ '@/views/Cypress/command/api-click.vue'
       ),
   },
+  {
+    path: '/cypress-command-clock',
+    name: 'cypress-command-clock',
+    component: () =>
+      import(
+        /* webpackChunkName: "cypress-command-clock" */ '@/views/Cypress/command/api-clock.vue'
+      ),
+  },
 ]
