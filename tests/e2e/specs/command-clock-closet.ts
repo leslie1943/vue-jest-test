@@ -17,4 +17,8 @@ describe('commands-clock-closet', () => {
     // 找到第一个 class为 first 的 li 元素
     cy.get('li').closest('.first').should('have.class', 'first').should('not.be.a', '')
   })
+
+  it('command closet: closet', () => {
+    cy.get('span').closest('.more-detail').should('include.text', '1')
+  })
 })
