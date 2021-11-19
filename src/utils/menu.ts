@@ -10,6 +10,7 @@ const appMenus = [
   { title: 'Cypress command clear', path: '/cypress-command-clear', icon: 'mdi-home-city' },
   { title: 'Cypress command click', path: '/cypress-command-click', icon: 'mdi-home-city' },
   { title: 'Cypress command clock', path: '/cypress-command-clock', icon: 'mdi-home-city' },
+  { title: 'Cypress command contains', path: '/cypress-command-contains', icon: 'mdi-home-city' },
   {
     title: 'Cypress command clearLocalStorage',
     path: '/cypress-command-clearLocalStorage',

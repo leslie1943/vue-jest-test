@@ -16,6 +16,13 @@
     <!-- <h1 class="res" style="color: red">{{ counter1 }}</h1>
     <h1 class="res" style="color: tomato">{{ counter2 }}</h1>
     <h1 class="res" style="color: cyan">{{ counter3 }}</h1> -->
+
+    <div class="more">
+      <span class="more-detail">1</span>
+      <span class="more-detail">2</span>
+      <span class="more-detail">3</span>
+      <span class="more-detail">4</span>
+    </div>
   </div>
 </template>
 
