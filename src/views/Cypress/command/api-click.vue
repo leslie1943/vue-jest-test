@@ -2,6 +2,7 @@
   <div>
     <v-btn id="btn_add" @click="add">Add</v-btn>
     <v-btn id="btn_minus" @click="minus">Minus</v-btn>
+    <v-btn id="btn_mul" @dblclick="mul">Multiple</v-btn>
     <div class="counter">{{ counter }}</div>
 
     <div>
@@ -37,6 +38,9 @@ export default class CypressCommandClick extends Vue {
 
   minus(): void {
     this.counter--
+  }
+  mul(): void {
+    this.counter = this.counter * 10
   }
 
   imageClick(id: number) {
