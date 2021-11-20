@@ -27,5 +27,6 @@ describe('commands-contains', () => {
   it('command contains: first match', () => {
     // contains 要完全 match.
     cy.contains('TEST').should('have.class', '1').click()
+    cy.contains('test', { matchCase: false }).should('have.class', '1').click()
   })
 })

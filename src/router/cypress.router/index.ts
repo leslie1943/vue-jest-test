@@ -86,4 +86,12 @@ export const cypressRouter: RouterNormal[] = [
         /* webpackChunkName: "cypress-command-contains" */ '@/views/Cypress/command/api-contains.vue'
       ),
   },
+  {
+    path: '/cypress-command-debug',
+    name: 'cypress-command-debug',
+    component: () =>
+      import(
+        /* webpackChunkName: "cypress-command-debug" */ '@/views/Cypress/command/api-debug.vue'
+      ),
+  },
 ]
