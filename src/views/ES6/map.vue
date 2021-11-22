@@ -45,6 +45,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import '@/utils/find-intersection-property'
+import { hasKey, viewMap } from '@/utils/es6-map-key-value'
 interface DataItem {
   id: number
   name: string
@@ -82,6 +83,12 @@ export default class ES6Map extends Vue {
 
   filterDuplicate(list: any, key: any) {
     this.dataUnique = [...new Map(list.map((item: any) => [item[key], item])).values()]
+  }
+
+  mounted(): void {
+    viewMap()
+    hasKey('Leslie')
+    hasKey('ET')
   }
 }
 </script>
