@@ -24,10 +24,7 @@ const mixPeople: MixPeople = {
   CLASS: '02-02',
   // TEACH:'',
 }
-console.log(
-  '🚀 ~ file: advanced-compare.types.ts ~ line 20 ~ mixPeople',
-  mixPeople
-)
+console.log('🚀 ~ file: advanced-compare.types.ts ~ line 20 ~ mixPeople', mixPeople)
 
 type EmployeeStuduent = Employee | Studuent
 // 满足 Studuent
@@ -65,3 +62,5 @@ const es4: EmployeeStuduent = {
   CLASS: 'CLASS_1',
 }
 console.log('🚀 ~ file: advanced-compare.types.ts ~ line 45 ~ es3', es4)
+
+export {}
