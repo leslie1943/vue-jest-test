@@ -10,6 +10,7 @@ import { Component, Watch } from 'vue-property-decorator'
 import TopMenu from '@/components/common/TopMenu.vue'
 import LayoutMain from '@/layout/LayoutMain.vue'
 import { Action } from 'vuex-class'
+import { printDateInfo } from '@/utils/es5-data.timezone'
 
 @Component({ components: { TopMenu, LayoutMain } })
 export default class App extends Vue {
@@ -22,6 +23,7 @@ export default class App extends Vue {
     this.$bus.once('app-bus-home', this.addAppBusOnce)
     this.$bus.on('app-route-change', this.routeChange)
     this.appName = this.$runtimeConfig.VUE_APP_NAME
+    printDateInfo()
   }
   addAppBus(): void {
     this.changeBusTimer()
