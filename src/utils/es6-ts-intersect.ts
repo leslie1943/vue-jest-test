@@ -14,5 +14,6 @@ const staff: IStaff = {
   name: 'leslie',
   companyId: 2212,
 }
+console.log('🚀 ~ file: es6-ts-intersect.ts ~ line 17 ~ staff', staff)
 
 export {}
