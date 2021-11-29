@@ -52,6 +52,16 @@
         </tr>
       </table>
     </v-row>
+
+    <v-row>
+      <ul>
+        <li>Home</li>
+        <li class="active">About</li>
+        <li>Services</li>
+        <li>Pricing</li>
+        <li>Contact</li>
+      </ul>
+    </v-row>
   </div>
 </template>
 
@@ -72,3 +82,10 @@ export default class CypressCommandClear extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.active {
+  font-size: 24px;
+  color: tomato;
+}
+</style>
