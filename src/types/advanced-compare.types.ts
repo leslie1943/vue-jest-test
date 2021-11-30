@@ -63,4 +63,20 @@ const es4: EmployeeStuduent = {
 }
 console.log('🚀 ~ file: advanced-compare.types.ts ~ line 45 ~ es3', es4)
 
+type S1 = {
+  name: string
+  age: number
+}
+
+type S2 = S1 & {
+  name?: string
+  age?: number
+}
+
+const s2: S2 = {
+  name: 'sss', //   Property 'name' is missing in type '{ age: number; }' but required in type 'S1'.ts(2322)
+  age: 19,
+}
+console.log('🚀 ~ file: advanced-compare.types.ts ~ line 79 ~ s2', s2)
+
 export {}
