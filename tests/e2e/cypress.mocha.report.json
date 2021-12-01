@@ -6,9 +6,12 @@
   "supportFile": "tests/e2e/support/index.ts",
   "pluginsFile": "tests/e2e/plugins/index.ts",
   "screenshotOnRunFailure": true,
+  "video": false,
   "retries": 1,
+  "screenshotsFolder": "reports/screenshots",
   "nodeVersion": "system",
-  "reporter": "../../node_modules/mochawesome/src/mochawesome.js",
+  "reporter": "mochawesome",
+  "numTestsKeptInMemory": 1,
   "reporterOptions": {
     "overwrite": false,
     "html": true,
