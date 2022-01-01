@@ -14,7 +14,8 @@
     "e2e:mocha": "node ./tests/e2e/cypress.mocha.js",
     "lint": "vue-cli-service lint",
     "dev": "vue-cli-service serve",
-    "api:test": "node ./tests/api/runner.js"
+    "api:test": "node ./tests/api/runner.js",
+    "mul": "node ./package-scripts.js"
   },
   "dependencies": {
     "@cypress/code-coverage": "^3.9.11",
